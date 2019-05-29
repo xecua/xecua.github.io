@@ -1,0 +1,30 @@
+html, body, #app {
+    height: 100%;
+}
+
+.container {
+    display: grid;
+    text-align: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: -10px;
+}
+
+
+#hontai {
+    text-align: center;
+    font-size: 72px;
+    font-weight: bold;
+    padding-top: 50vh;
+}
+
+#button {
+    text-align: center;
+    margin: 3em;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
