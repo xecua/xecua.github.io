@@ -5,7 +5,7 @@ const Index: React.FC = () => {
     <>
       <a href="https://xecua.hatenablog.com/">ぶろぐ</a>
       <hr />
-      改修中...
+      改修中…
     </>
   )
 }
