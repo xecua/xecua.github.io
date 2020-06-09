@@ -2,7 +2,11 @@ import React from 'react';
 
 const Index: React.FC = () => {
   return (
-    <div>test</div>
+    <>
+      <a href="https://xecua.hatenablog.com/">ぶろぐ</a>
+      <hr />
+      改修中...
+    </>
   )
 }
 
