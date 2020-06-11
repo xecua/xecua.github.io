@@ -5,6 +5,7 @@ import NextLink from 'next/link';
 
 const useStyles = makeStyles(theme => createStyles({
   title: {
+    flexGrow: 1,
     marginRight: theme.spacing(1)
   },
   menuItem: {
