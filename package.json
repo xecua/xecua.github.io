@@ -27,6 +27,7 @@
     "eslint": "^7.2.0",
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^4.0.4",
+    "prop-types": "^15.7.2",
     "typescript": "^3.9.5"
   },
   "eslintConfig": {
@@ -52,7 +53,14 @@
         2,
         "never"
       ],
-      "semi": ["error", "always"],
+      "quotes": [
+        2,
+        "single"
+      ],
+      "semi": [
+        "error",
+        "always"
+      ],
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn"
     }
