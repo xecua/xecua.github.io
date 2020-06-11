@@ -1,14 +1,13 @@
 import React from 'react';
-import BookIcon from '@material-ui/icons/Book';
+import Header from '@/components/Header';
 
 const Index: React.FC = () => {
   return (
     <>
+      <Header />
       <a href="https://xecua.hatenablog.com/">
-        <BookIcon /> ブログ
+        ブログ
       </a>
-      <hr />
-      改修中…
     </>
   );
 };
