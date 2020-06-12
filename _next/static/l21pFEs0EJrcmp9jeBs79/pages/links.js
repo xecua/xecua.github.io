@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{"0csk":function(n,u,i){(window.__NEXT_P=window.__NEXT_P||[]).push(["/links",function(){return i("0nSd")}])},"0nSd":function(n,u,i){"use strict";i.r(u);u.default=function(){return null}}},[["0csk",0]]]);
