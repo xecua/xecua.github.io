@@ -24,7 +24,7 @@ jobs:
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          personal_token: ${{ secrets.XECUA_PERSONAL_TOKEN }}
           publish_dir: ./out
           publish_branch: master  # <username>.github.io constraint
           cname: koffein.dev
