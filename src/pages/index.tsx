@@ -14,9 +14,11 @@ const Index: React.FC = () => {
     <>
       <Box className={classes.box} component="div">
         <Typography>
-          →<Link href="https://xecua.hatenablog.com/">
+          →
+          <Link href="https://xecua.hatenablog.com/" color="inherit">
             ブログ
-          </Link>←
+          </Link>
+          ←
         </Typography>
       </Box>
       <hr />
