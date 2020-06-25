@@ -1,0 +1,33 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "prettier"
+  ],
+  "root": true,
+  "env": {
+    "node": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "react",
+    "react-hooks",
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "no-var": 2,
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/*.tsx"
+      ],
+      "rules": {
+        "react/prop-types": "off"
+      }
+    }
+  ]
+}
