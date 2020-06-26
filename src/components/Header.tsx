@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   AppBar,
   makeStyles,
@@ -7,14 +7,23 @@ import {
   Typography,
   IconButton,
   Button,
+  Hidden,
+  Drawer,
+  List,
+  ListItem,
 } from '@material-ui/core';
-import { GitHub, Twitter } from '@material-ui/icons';
+import { GitHub, Twitter, Menu as MenuIcon } from '@material-ui/icons';
 import NextLink from 'next/link';
 
 const useStyles = makeStyles((theme) =>
   createStyles({
     title: {
       marginRight: theme.spacing(2),
+    },
+    menuButton: {
+      [theme.breakpoints.up('sm')]: {
+        display: 'none',
+      },
     },
     menuItem: {
       marginRight: theme.spacing(2),
@@ -32,21 +41,35 @@ const useStyles = makeStyles((theme) =>
 const Header: React.FC = () => {
   const classes = useStyles();
 
+  const [openDrawer, setOpenDrawer] = useState(false);
+
+  const handleDrawerToggle = () => {
+    setOpenDrawer(!openDrawer);
+  };
+
   return (
     <>
-      <AppBar>
+      <AppBar position="fixed">
         <Toolbar>
-          {/* <NextLink href="/"><Typography className={classes.title} variant="h6" component="h1">ぽ</Typography></NextLink> */}
-          <NextLink href="/">
-            <Button className={classes.menuItem}>
-              <Typography>プロフィール</Typography>
-            </Button>
-          </NextLink>
-          <NextLink href="/works">
-            <Button className={classes.menuItem}>
-              <Typography>つくったもの</Typography>
-            </Button>
-          </NextLink>
+          <IconButton
+            aria-label="open drawer"
+            onClick={handleDrawerToggle}
+            className={classes.menuButton}>
+            <MenuIcon />
+          </IconButton>
+          <Hidden smDown>
+            <NextLink href="/">
+              <Button className={classes.menuItem}>
+                <Typography>プロフィール</Typography>
+              </Button>
+            </NextLink>
+            <NextLink href="/works">
+              <Button className={classes.menuItem}>
+                <Typography>つくったもの</Typography>
+              </Button>
+            </NextLink>
+          </Hidden>
+
           <div className={classes.spacer} />
           <IconButton href="https://github.com/xecua">
             <GitHub />
@@ -57,6 +80,31 @@ const Header: React.FC = () => {
         </Toolbar>
       </AppBar>
       <Toolbar /> {/* Placeholder */}
+      <Hidden smUp>
+        <Drawer
+          open={openDrawer}
+          aria-label="drawer"
+          onClose={handleDrawerToggle}
+          ModalProps={{
+            keepMounted: true,
+          }}>
+          <Toolbar>
+            <Typography>ページ一覧</Typography>
+          </Toolbar>
+          <List>
+            <ListItem button>
+              <NextLink href="/">
+                <Typography>プロフィール</Typography>
+              </NextLink>
+            </ListItem>
+            <ListItem button>
+              <NextLink href="/works">
+                <Typography>つくったもの</Typography>
+              </NextLink>
+            </ListItem>
+          </List>
+        </Drawer>
+      </Hidden>
     </>
   );
 };
