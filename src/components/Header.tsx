@@ -11,14 +11,37 @@ import {
   Drawer,
   List,
   ListItem,
+  Divider,
+  SvgIconTypeMap,
+  ListItemIcon,
+  ListItemText,
 } from '@material-ui/core';
-import { GitHub, Twitter, Menu as MenuIcon } from '@material-ui/icons';
+import {
+  GitHub,
+  Twitter,
+  Menu as MenuIcon,
+  Person,
+  Folder,
+} from '@material-ui/icons';
+import { useRouter } from 'next/router';
 import NextLink from 'next/link';
+import {
+  OverridableComponent,
+  OverridableTypeMap,
+} from '@material-ui/core/OverridableComponent';
+
+const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) =>
   createStyles({
     title: {
       marginRight: theme.spacing(2),
+    },
+    drawer: {
+      width: drawerWidth,
+    },
+    drawerPaper: {
+      width: drawerWidth,
     },
     menuButton: {
       [theme.breakpoints.up('sm')]: {
@@ -36,16 +59,26 @@ const useStyles = makeStyles((theme) =>
   })
 );
 
-// ButtonにLinkを埋め込みたいが情報が古い 特にref周りを理解する必要がありそう(memo)
+type Menu<T extends OverridableTypeMap> = {
+  icon: OverridableComponent<T>;
+  link: string;
+  label: string;
+};
 
 const Header: React.FC = () => {
   const classes = useStyles();
+  const router = useRouter();
 
   const [openDrawer, setOpenDrawer] = useState(false);
 
-  const handleDrawerToggle = () => {
+  const toggleDrawer = () => {
     setOpenDrawer(!openDrawer);
   };
+
+  const menuItems: Menu<SvgIconTypeMap<Record<string, unknown>, 'svg'>>[] = [
+    { icon: Person, link: '/', label: 'プロフィール' },
+    { icon: Folder, link: '/works', label: 'つくったもの' },
+  ];
 
   return (
     <>
@@ -53,21 +86,19 @@ const Header: React.FC = () => {
         <Toolbar>
           <IconButton
             aria-label="open drawer"
-            onClick={handleDrawerToggle}
+            onClick={toggleDrawer}
             className={classes.menuButton}>
             <MenuIcon />
           </IconButton>
-          <Hidden smDown>
-            <NextLink href="/">
-              <Button className={classes.menuItem}>
-                <Typography>プロフィール</Typography>
-              </Button>
-            </NextLink>
-            <NextLink href="/works">
-              <Button className={classes.menuItem}>
-                <Typography>つくったもの</Typography>
-              </Button>
-            </NextLink>
+          <Hidden xsDown>
+            {menuItems.map((item, i) => (
+              <NextLink href={item.link} key={i}>
+                <Button className={classes.menuItem}>
+                  <item.icon />
+                  <Typography>{item.label}</Typography>
+                </Button>
+              </NextLink>
+            ))}
           </Hidden>
 
           <div className={classes.spacer} />
@@ -84,24 +115,28 @@ const Header: React.FC = () => {
         <Drawer
           open={openDrawer}
           aria-label="drawer"
-          onClose={handleDrawerToggle}
+          onClose={toggleDrawer}
+          className={classes.drawer}
+          classes={{ paper: classes.drawerPaper }}
           ModalProps={{
             keepMounted: true,
           }}>
-          <Toolbar>
-            <Typography>ページ一覧</Typography>
-          </Toolbar>
+          <Toolbar />
+          <Divider />
           <List>
-            <ListItem button>
-              <NextLink href="/">
-                <Typography>プロフィール</Typography>
+            {menuItems.map((item, i) => (
+              <NextLink href={item.link} key={i}>
+                <ListItem
+                  button
+                  onClick={toggleDrawer}
+                  selected={router.pathname === item.link}>
+                  <ListItemIcon>
+                    <item.icon />
+                  </ListItemIcon>
+                  <ListItemText primary={item.label} />
+                </ListItem>
               </NextLink>
-            </ListItem>
-            <ListItem button>
-              <NextLink href="/works">
-                <Typography>つくったもの</Typography>
-              </NextLink>
-            </ListItem>
+            ))}
           </List>
         </Drawer>
       </Hidden>
