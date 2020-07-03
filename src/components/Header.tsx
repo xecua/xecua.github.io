@@ -6,7 +6,6 @@ import {
   createStyles,
   Typography,
   IconButton,
-  Button,
   Hidden,
   Drawer,
   List,
@@ -29,29 +28,53 @@ import {
   OverridableComponent,
   OverridableTypeMap,
 } from '@material-ui/core/OverridableComponent';
+import clsx from 'clsx';
 
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) =>
   createStyles({
     title: {
-      marginRight: theme.spacing(2),
+      marginBlockStart: theme.spacing(2),
     },
     drawer: {
-      width: drawerWidth,
+      inlineSize: drawerWidth,
     },
     drawerPaper: {
-      width: drawerWidth,
+      inlineSize: drawerWidth,
     },
     menuButton: {
       [theme.breakpoints.up('sm')]: {
         display: 'none',
       },
     },
-    menuItem: {
+    menuItemWrapper: {
+      position: 'relative',
+      display: 'inline-block',
       marginRight: theme.spacing(2),
-      borderRightWidth: '5px',
-      textWeight: 'bold',
+      boxSizing: 'content-box',
+    },
+    menuItem: {
+      boxSizing: 'content-box',
+      '&::after': {
+        position: 'absolute',
+        display: 'block',
+        content: '""',
+        inlineSize: '100%',
+        blockSize: '2px',
+        background: theme.palette.text.primary,
+      },
+    },
+    menuItemNotSelected: {
+      '&::after': {
+        transitionProperty: 'transform',
+        transitionDuration: '.5s',
+        transform: 'scaleX(0)',
+        transformOrigin: 'center bottom',
+      },
+      '&:hover::after': {
+        transform: 'scaleX(1)',
+      },
     },
     spacer: {
       flexGrow: 1,
@@ -92,11 +115,19 @@ const Header: React.FC = () => {
           </IconButton>
           <Hidden xsDown>
             {menuItems.map((item, i) => (
-              <NextLink href={item.link} key={i}>
-                <Button className={classes.menuItem}>
-                  <item.icon />
-                  <Typography>{item.label}</Typography>
-                </Button>
+              <NextLink href={item.link} key={i} passHref>
+                <span className={classes.menuItemWrapper}>
+                  <Typography
+                    component="div"
+                    className={clsx(
+                      classes.menuItem,
+                      router.pathname !== item.link
+                        ? classes.menuItemNotSelected
+                        : ''
+                    )}>
+                    {item.label}
+                  </Typography>
+                </span>
               </NextLink>
             ))}
           </Hidden>
