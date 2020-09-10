@@ -1,54 +1,39 @@
 import React from 'react';
-import { Typography, Link, makeStyles, Button, Grid } from '@material-ui/core';
-import { GitHub, Twitter } from '@material-ui/icons';
+import { Typography, makeStyles, Box } from '@material-ui/core';
+import '@/utils/extensions';
 
 const useStyles = makeStyles((theme) => ({
-  box: {
-    marginTop: theme.spacing(2),
-    marginLeft: theme.spacing(2),
+  root: {
+    marginBlockStart: theme.spacing(2).addPxUnit(),
+    marginInlineStart: theme.spacing(2).addPxUnit(),
   },
-  textTransformNone: {
-    textTransform: 'none',
+  box: {
+    marginBlockStart: theme.spacing(2).addPxUnit(),
+    marginBlockEnd: theme.spacing(2).addPxUnit(),
+  },
+  '@global': {
+    '.MuiTypography-body1': {
+      marginInlineStart: theme.spacing(2).addPxUnit(),
+    },
   },
 }));
 
 const Index: React.FC = () => {
   const classes = useStyles();
   return (
-    <>
-      <Grid container spacing={3} className={classes.box}>
-        <Grid item>
-          <Typography variant="h4" component="h2">
-            xecua
-          </Typography>
-        </Grid>
-        <Grid container spacing={1}>
-          <Grid item>
-            <Button
-              className={classes.textTransformNone}
-              variant="contained"
-              href="https://github.com/xecua"
-              startIcon={<GitHub />}>
-              GitHub: xecua
-            </Button>
-          </Grid>
-          <Grid item>
-            <Button
-              className={classes.textTransformNone}
-              variant="contained"
-              href="https://twitter.com/xecual"
-              startIcon={<Twitter />}>
-              Twitter: @xecual
-            </Button>
-          </Grid>
-          <Grid item>
-            <Button href="https://xecua.hatenablog.com/" variant="outlined">
-              ブログ
-            </Button>
-          </Grid>
-        </Grid>
-      </Grid>
-    </>
+    <Box className={classes.root}>
+      <Box className={classes.box}>
+        <Typography variant="h4" component="h2" gutterBottom>
+          Bio
+        </Typography>
+        <Typography variant="body1" gutterBottom>
+          HN: xecua/caffein
+        </Typography>
+        <Typography variant="body1" gutterBottom>
+          都内で大学生をしています
+        </Typography>
+      </Box>
+    </Box>
   );
 };
 
