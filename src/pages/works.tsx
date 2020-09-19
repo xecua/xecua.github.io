@@ -85,6 +85,9 @@ const Works: React.FC = () => {
           </Link>
           の説明でも
         </Typography>
+        <Typography variant="body2" gutterBottom>
+          仕組みが気になって再実装してみることが多い
+        </Typography>
       </Box>
       {workItems.map(WorkItemComponent)}
     </Box>
