@@ -28,6 +28,8 @@ const Index: React.FC = () => {
         </Typography>
         <Typography variant="body1" gutterBottom>
           HN: xecua/caffein
+          <br />
+          連絡はGmailまで。 ユーザ名: courser4848
         </Typography>
         <Typography variant="body1" gutterBottom>
           都内で大学生をしています
