@@ -3,6 +3,7 @@ import React from 'react';
 import { AppProps } from 'next/app';
 import ThemeProvider from '@/components/ThemeProvider';
 import Header from '@/components/Header';
+import { Container } from '@material-ui/core';
 
 // eslint-disable-next-line react/prop-types
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
@@ -17,7 +18,9 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <ThemeProvider>
       <Header />
-      <Component {...pageProps} />
+      <Container>
+        <Component {...pageProps} />
+      </Container>
     </ThemeProvider>
   );
 };

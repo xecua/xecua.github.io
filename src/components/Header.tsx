@@ -145,17 +145,7 @@ const Header: React.FC = () => {
               </NextLink>
             ))}
           </Hidden>
-
           <div className={classes.spacer} />
-          <IconButton title="GitHub" href="https://github.com/xecua">
-            <GitHub />
-          </IconButton>
-          <IconButton title="Twitter" href="https://twitter.com/xecual">
-            <Twitter />
-          </IconButton>
-          <IconButton title="Blog" href="https://xecua.hatenablog.com/">
-            <Edit />
-          </IconButton>
         </Toolbar>
       </AppBar>
       <Toolbar /> {/* Placeholder */}
