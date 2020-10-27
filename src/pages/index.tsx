@@ -2,10 +2,8 @@ import React from 'react';
 import {
   Typography,
   makeStyles,
-  Box,
   Grid,
   Avatar,
-  Icon,
   Link,
   Button,
 } from '@material-ui/core';
@@ -23,6 +21,11 @@ const useStyles = makeStyles((theme) => ({
   textTransformNone: {
     textTransform: 'none',
   },
+  '@global': {
+    '.MuiButton-label': {
+      whiteSpace: 'nowrap'
+    }
+  }
 }));
 
 const Index: React.FC = () => {
@@ -35,7 +38,7 @@ const Index: React.FC = () => {
       justify="space-evenly"
       alignItems="flex-start">
       <Grid item container xs={12} spacing={4}>
-        <Grid item xs={2}>
+        <Grid item xs={8} sm={4} md={2}>
           <Avatar src="/icon.png" alt="icon" className={classes.icon} />
         </Grid>
         <Grid xs item container direction="column" alignItems="flex-start">
