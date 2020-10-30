@@ -6,9 +6,13 @@ import {
   Avatar,
   Link,
   Button,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
 } from '@material-ui/core';
 import '@/utils/extensions';
-import { GitHub, Mail, Twitter } from '@material-ui/icons';
+import { Edit, GitHub, Mail, Twitter } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -18,14 +22,16 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     height: 'auto',
   },
-  textTransformNone: {
-    textTransform: 'none',
+  linkList: {
+    width: '100%',
+    maxWidth: '20em',
   },
-  '@global': {
-    '.MuiButton-label': {
-      whiteSpace: 'nowrap'
-    }
-  }
+  header: {
+    borderBottom: 'solid 2px',
+  },
+  underLined: {
+    textDecoration: 'underline',
+  },
 }));
 
 const Index: React.FC = () => {
@@ -41,43 +47,60 @@ const Index: React.FC = () => {
         <Grid item xs={8} sm={4} md={2}>
           <Avatar src="/icon.png" alt="icon" className={classes.icon} />
         </Grid>
-        <Grid xs item container direction="column" alignItems="flex-start">
-          <Grid item>
-            <Button
-              href="https://github.com/xecua"
+        <Grid xs item>
+          <List className={classes.linkList}>
+            <ListItem
+              component={Link}
               color="inherit"
-              className={classes.textTransformNone}
-              startIcon={<GitHub />}>
-              @xecua
-            </Button>
-          </Grid>
-          <Grid item>
-            <Button
-              href="https://twitter.com/xecual"
+              href="https://github.com/xecua">
+              <ListItemIcon>
+                <GitHub />
+              </ListItemIcon>
+              <ListItemText color="inherit" primary="@xecua" />
+            </ListItem>
+            <ListItem
+              component={Link}
               color="inherit"
-              className={classes.textTransformNone}
-              startIcon={<Twitter />}>
-              @xecual
-            </Button>
-          </Grid>
-          <Grid item>
-            <Button
-              startIcon={<Mail />}
+              href="https://twitter.com/xecual">
+              <ListItemIcon>
+                <Twitter />
+              </ListItemIcon>
+              <ListItemText color="inherit" primary="@xecual" />
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <Mail />
+              </ListItemIcon>
+              <ListItemText primary="Gmail: courser4848" />
+            </ListItem>
+            <ListItem
+              component={Link}
               color="inherit"
-              className={classes.textTransformNone}>
-              Gmail: courser4848
-            </Button>
-          </Grid>
-          <Grid item>
-            <Link href="https://xecua.hatenablog.com/" color="inherit">
-              ぶろぐ
-            </Link>
-          </Grid>
+              href="https://xecua.hatenablog.com/">
+              <ListItemIcon>
+                <Edit />
+              </ListItemIcon>
+              <ListItemText
+                className={classes.underLined}
+                color="inherit"
+                primary="ぶろぐ"
+              />
+            </ListItem>
+          </List>
         </Grid>
       </Grid>
       <Grid item container xs={12} spacing={4} direction="column">
         <Grid item>
-          <Typography>都内で大学生をしています</Typography>
+          <Typography gutterBottom>HN: xecua/caffeine</Typography>
+          <Typography gutterBottom>
+            趣味: ゲーム(最近はもっぱら音ゲ。SDVX、Arcaeaあたりを主に)、PCいじり
+          </Typography>
+          <Typography gutterBottom>
+            職業: 大学生(専攻: CS/研究分野: SE)
+          </Typography>
+        </Grid>
+        <Grid item>
+          <Typography gutterBottom>特に目的もなくふらふらしています</Typography>
         </Grid>
       </Grid>
     </Grid>
