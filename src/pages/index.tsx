@@ -56,7 +56,7 @@ const Index: React.FC = () => {
               <ListItemIcon>
                 <GitHub />
               </ListItemIcon>
-              <ListItemText color="inherit" primary="@xecua" />
+              <ListItemText className={classes.underLined} color="inherit" primary="@xecua" />
             </ListItem>
             <ListItem
               component={Link}
@@ -65,7 +65,7 @@ const Index: React.FC = () => {
               <ListItemIcon>
                 <Twitter />
               </ListItemIcon>
-              <ListItemText color="inherit" primary="@xecual" />
+              <ListItemText className={classes.underLined} color="inherit" primary="@xecual" />
             </ListItem>
             <ListItem>
               <ListItemIcon>
