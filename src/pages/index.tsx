@@ -56,7 +56,11 @@ const Index: React.FC = () => {
               <ListItemIcon>
                 <GitHub />
               </ListItemIcon>
-              <ListItemText className={classes.underLined} color="inherit" primary="@xecua" />
+              <ListItemText
+                className={classes.underLined}
+                color="inherit"
+                primary="@xecua"
+              />
             </ListItem>
             <ListItem
               component={Link}
@@ -65,7 +69,11 @@ const Index: React.FC = () => {
               <ListItemIcon>
                 <Twitter />
               </ListItemIcon>
-              <ListItemText className={classes.underLined} color="inherit" primary="@xecual" />
+              <ListItemText
+                className={classes.underLined}
+                color="inherit"
+                primary="@xecual"
+              />
             </ListItem>
             <ListItem>
               <ListItemIcon>
@@ -93,7 +101,22 @@ const Index: React.FC = () => {
         <Grid item>
           <Typography gutterBottom>HN: xecua/caffeine</Typography>
           <Typography gutterBottom>
-            趣味: ゲーム(最近はもっぱら音ゲ。SDVX、Arcaeaあたりを主に)、PCいじり
+            趣味
+            <ul>
+              <li>
+                ゲーム
+                <br />
+                音楽ゲームとアクションが好きです
+                <br />
+                音楽ゲームはACだとSOUND VOLTEX(SV-1322-4960/SKILL
+                Lv.11)とかオンゲキ(五段/鉑)、モバイルだとArcaea(660416079/Pot.〜11.5)がメインです
+              </li>
+              <li>
+                PCいじり
+                <br />
+                プとか。Rustがすきです
+              </li>
+            </ul>
           </Typography>
           <Typography gutterBottom>
             職業: 大学生(専攻: CS/研究分野: SE)
@@ -101,6 +124,17 @@ const Index: React.FC = () => {
         </Grid>
         <Grid item>
           <Typography gutterBottom>特に目的もなくふらふらしています</Typography>
+        </Grid>
+        <Grid item>
+          <Typography variant="h6">その他リンク</Typography>
+          <Typography gutterBottom>
+            <Link href="/key.asc">GnuPGの鍵</Link> <br />
+            特に意味はありません インポートしてもいいのよ
+          </Typography>
+          <Typography gutterBottom>
+            <Link href="https://pawoo.net/@xecua">Pawoo</Link> <br />
+            Twitterが死んだ時のための冗長性です
+          </Typography>
         </Grid>
       </Grid>
     </Grid>
