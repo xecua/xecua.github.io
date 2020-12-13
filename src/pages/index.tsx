@@ -135,6 +135,11 @@ const Index: React.FC = () => {
             <Link href="https://pawoo.net/@xecua">Pawoo</Link> <br />
             Twitterが死んだ時のための冗長性です
           </Typography>
+          <Typography gutterBottom>
+            <Link href="https://trap.jp/author/xecua">traP Blog</Link> <br />
+            所属しているサークルの枠で書いたやつ
+            黒歴史的なやつもあるけど人生自体黒歴史なので気にしないことにします
+          </Typography>
         </Grid>
       </Grid>
     </Grid>
