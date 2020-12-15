@@ -66,7 +66,7 @@ const useStyles = makeStyles((theme) =>
         content: '""',
         inlineSize: '100%',
         blockSize: '2px',
-        background: theme.palette.text.primary,
+        background: theme.palette.background.default,
       },
     },
     menuItemNotSelected: {
