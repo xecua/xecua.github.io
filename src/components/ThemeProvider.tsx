@@ -11,8 +11,8 @@ const CustomThemeProvider: React.FC = (props) => {
       createMuiTheme({
         palette: {
           type: prefersDarkMode ? 'dark' : 'light',
-          primary: { main: prefersDarkMode ? '#1769aa' : '#ffffff' },
-          secondary: { main: prefersDarkMode ? '#00b0ff' : '#2979ff' },
+          primary: { main: prefersDarkMode ? '#52A6FB' : '#0067D3' },
+          secondary: { main: prefersDarkMode ? '#a1887f' : '#5d4037' },
         },
       }),
     [prefersDarkMode]
