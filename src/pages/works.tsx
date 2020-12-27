@@ -15,11 +15,11 @@ const useStyles = makeStyles((theme) => ({
   spacer: {
     marginBlockEnd: theme.spacing(2).addPxUnit(),
   },
-  '@global': {
-    '.MuiTypography-body1': {
-      marginInlineStart: theme.spacing(2).addPxUnit(),
-    },
-  },
+  // '@global': {
+  //   '.MuiTypography-body1': {
+  //     marginInlineStart: theme.spacing(2).addPxUnit(),
+  //   },
+  // },
 }));
 
 type WorkItem = {
