@@ -107,7 +107,7 @@ const Index: React.FC = () => {
       </Grid>
       <Grid item xs={12}>
         <Typography gutterBottom>
-          大学生(専攻: CS/研究分野: SE)です。
+          HNはxecua。読みは適当に。 大学生(専攻: CS/研究分野: SE)です。
           これといった目的もなく生きているのでそのときにやりたいことをやっています
         </Typography>
       </Grid>
