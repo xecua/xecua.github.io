@@ -28,13 +28,6 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
 
   return (
     <ThemeProvider>
-      <Typography component="h1" variant="h3" align="center">
-        xecuaのぷろふぃ〜る
-      </Typography>
-      <Typography align="center" style={{ color: '#888888' }}>
-        HNはcaffeineでも可
-      </Typography>
-      <Divider />
       {/* <Header /> */}
       <Container>
         <Component {...pageProps} />
