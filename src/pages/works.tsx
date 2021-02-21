@@ -47,9 +47,7 @@ const Works: React.FC = () => {
       <Box className={classes.box}>
         <Typography variant="h6">
           {typeof props.href !== 'undefined' ? (
-            <Link href={props.href} color="secondary">
-              {props.title}
-            </Link>
+            <Link href={props.href}>{props.title}</Link>
           ) : (
             props.title
           )}

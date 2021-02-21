@@ -151,7 +151,6 @@ const Index: React.FC = () => {
                       <>
                         <b>Python</b>{' '}
                         <Icon fontSize="inherit" className="fab fa-python" />:
-                        Intermediate
                       </>
                     }
                     secondary="MLではなく汎用計算機として。あとはDjangoとか"
@@ -163,7 +162,6 @@ const Index: React.FC = () => {
                       <>
                         <b>Rust</b>{' '}
                         <Icon fontSize="inherit" className="fab fa-rust" />:
-                        Beginner
                       </>
                     }
                   />
@@ -174,7 +172,6 @@ const Index: React.FC = () => {
                       <>
                         <b>JavaScript/TypeScript</b>{' '}
                         <Icon fontSize="inherit" className="fab fa-js" />:
-                        Beginner
                       </>
                     }
                     secondary="このサイトはNext.js製です"
@@ -186,7 +183,6 @@ const Index: React.FC = () => {
                       <>
                         <b>Unix shell</b>{' '}
                         <Icon fontSize="inherit" className="fas fa-terminal" />:
-                        Beginner
                       </>
                     }
                   />
