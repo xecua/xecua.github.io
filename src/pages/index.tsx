@@ -92,7 +92,7 @@ const Index: React.FC = () => {
             <ListItem
               component={Link}
               color="inherit"
-              href="https://xecua.hatenablog.com/">
+              href="https://blog.koffein.dev/">
               <ListItemIcon>
                 <Edit />
               </ListItemIcon>
@@ -124,13 +124,13 @@ const Index: React.FC = () => {
               主に音楽ゲーム(↓がメイン)とアクション
               <List dense>
                 <ListItem>
-                  <ListItemText primary="SOUND VOLTEX(SV-1322-4960/SKILL Lv.11/Coral III)" />
+                  <ListItemText primary="SOUND VOLTEX(SV-1322-4960)" />
                 </ListItem>
                 <ListItem>
-                  <ListItemText primary="オンゲキ(五段/鉑)" />
+                  <ListItemText primary="オンゲキ" />
                 </ListItem>
                 <ListItem>
-                  <ListItemText primary="Arcaea(660416079/ポ≒11.6)" />
+                  <ListItemText primary="Arcaea(660416079)" />
                 </ListItem>
               </List>
             </Typography>
@@ -150,7 +150,7 @@ const Index: React.FC = () => {
                     primary={
                       <>
                         <b>Python</b>{' '}
-                        <Icon fontSize="inherit" className="fab fa-python" />:
+                        <Icon fontSize="inherit" className="fab fa-python" />
                       </>
                     }
                     secondary="MLではなく汎用計算機として。あとはDjangoとか"
@@ -161,7 +161,7 @@ const Index: React.FC = () => {
                     primary={
                       <>
                         <b>Rust</b>{' '}
-                        <Icon fontSize="inherit" className="fab fa-rust" />:
+                        <Icon fontSize="inherit" className="fab fa-rust" />
                       </>
                     }
                   />
@@ -171,10 +171,9 @@ const Index: React.FC = () => {
                     primary={
                       <>
                         <b>JavaScript/TypeScript</b>{' '}
-                        <Icon fontSize="inherit" className="fab fa-js" />:
+                        <Icon fontSize="inherit" className="fab fa-js" />
                       </>
                     }
-                    secondary="このサイトはNext.js製です"
                   />
                 </ListItem>
                 <ListItem>
@@ -182,7 +181,7 @@ const Index: React.FC = () => {
                     primary={
                       <>
                         <b>Unix shell</b>{' '}
-                        <Icon fontSize="inherit" className="fas fa-terminal" />:
+                        <Icon fontSize="inherit" className="fas fa-terminal" />
                       </>
                     }
                   />
