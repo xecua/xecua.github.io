@@ -92,7 +92,7 @@ const Index: React.FC = () => {
             <ListItem
               component={Link}
               color="inherit"
-              href="https://blog.koffein.dev/">
+              href="https://xecua.hatenablog.com">
               <ListItemIcon>
                 <Edit />
               </ListItemIcon>
