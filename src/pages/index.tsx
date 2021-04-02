@@ -107,7 +107,7 @@ const Index: React.FC = () => {
       </Grid>
       <Grid item xs={12}>
         <Typography gutterBottom>
-          HNはxecua。読みは適当に。 大学生(専攻: CS/研究分野: SE)です。
+          HNはxecua。読みは適当に。 大学院生(専攻: CS/研究分野: SE)です。
           これといった目的もなく生きているのでそのときにやりたいことをやっています
         </Typography>
       </Grid>
@@ -200,10 +200,6 @@ const Index: React.FC = () => {
       <Grid item xs={12}>
         <Typography component="h2" variant="subtitle1">
           その他リンク
-        </Typography>
-        <Typography paragraph className={classes.indent1}>
-          <Link href="/key.asc">GnuPGの鍵</Link> <br />
-          特に意味はありません インポートしてもいいのよ
         </Typography>
         <Typography paragraph className={classes.indent1}>
           <Link href="https://pawoo.net/@xecua">Pawoo</Link> <br />
