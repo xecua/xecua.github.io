@@ -5,7 +5,6 @@ import {
   Grid,
   Avatar,
   Link,
-  Button,
   List,
   ListItem,
   ListItemIcon,
@@ -121,18 +120,7 @@ const Index: React.FC = () => {
               ゲーム
             </Typography>
             <Typography variant="body2" paragraph className={classes.indent2}>
-              主に音楽ゲーム(↓がメイン)とアクション
-              <List dense>
-                <ListItem>
-                  <ListItemText primary="SOUND VOLTEX(SV-1322-4960)" />
-                </ListItem>
-                <ListItem>
-                  <ListItemText primary="オンゲキ" />
-                </ListItem>
-                <ListItem>
-                  <ListItemText primary="Arcaea(660416079)" />
-                </ListItem>
-              </List>
+              最近は専ら音楽ゲーム(SDVX(SV-1322-4960)、オンゲキ、Arcaea(660416079))。あとははらがみ(807301671)とか
             </Typography>
           </Grid>
           <Grid item>
@@ -209,6 +197,10 @@ const Index: React.FC = () => {
           <Link href="https://trap.jp/author/xecua">traP Blog</Link> <br />
           所属しているサークルの枠で書いたやつ
           黒歴史的なやつもあるけど人生自体黒歴史なので気にしないことにします
+        </Typography>
+        <Typography paragraph className={classes.indent1}>
+          <Link href="https://www.amazon.jp/hz/wishlist/ls/1IO2VY7TGVLJM?ref_=wl_share">芋🥔</Link> <br />
+          これ届くことあるんかな
         </Typography>
       </Grid>
       <Grid item xs={12}>
