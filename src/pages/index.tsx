@@ -152,6 +152,7 @@ const Index: React.FC = () => {
                         <Icon fontSize="inherit" className="fab fa-rust" />
                       </>
                     }
+                    secondary="習熟度はそんなに高くないけどすき"
                   />
                 </ListItem>
                 <ListItem>
@@ -162,6 +163,7 @@ const Index: React.FC = () => {
                         <Icon fontSize="inherit" className="fab fa-js" />
                       </>
                     }
+                    secondary="脳死Reactマン"
                   />
                 </ListItem>
                 <ListItem>
@@ -172,6 +174,7 @@ const Index: React.FC = () => {
                         <Icon fontSize="inherit" className="fas fa-terminal" />
                       </>
                     }
+                    secondary="(黒い画面恐怖症ではないという程度の意味です)"
                   />
                 </ListItem>
                 <ListItem>
