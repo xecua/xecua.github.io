@@ -57,6 +57,8 @@ const useStyles = makeStyles((theme) =>
       marginRight: theme.spacing(2),
       boxSizing: 'content-box',
       cursor: 'default',
+      minWidth: '6em',
+      textAlign: 'center'
     },
     menuItem: {
       boxSizing: 'content-box',
@@ -113,7 +115,7 @@ const Header: React.FC = () => {
 
   const menuItems: Menu<SvgIconTypeMap<Record<string, unknown>, 'svg'>>[] = [
     { icon: Person, link: '/', label: 'プロフィール' },
-    { icon: Folder, link: '/works', label: 'つくったもの' },
+    { icon: Folder, link: '/works', label: 'Works' },
   ];
 
   return (

@@ -28,7 +28,7 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
 
   return (
     <ThemeProvider>
-      {/* <Header /> */}
+      <Header />
       <Container>
         <Component {...pageProps} />
       </Container>
