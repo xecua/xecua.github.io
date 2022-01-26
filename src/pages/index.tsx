@@ -13,7 +13,6 @@ import {
 } from '@material-ui/core';
 import '@/utils/extensions';
 import { Edit, GitHub, Mail, Twitter } from '@material-ui/icons';
-import Works from './works';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -202,13 +201,12 @@ const Index: React.FC = () => {
           黒歴史的なやつもあるけど人生自体黒歴史なので気にしないことにします
         </Typography>
         <Typography paragraph className={classes.indent1}>
-          <Link href="https://www.amazon.jp/hz/wishlist/ls/1IO2VY7TGVLJM?ref_=wl_share">芋🥔</Link> <br />
+          <Link href="https://www.amazon.jp/hz/wishlist/ls/1IO2VY7TGVLJM?ref_=wl_share">
+            芋🥔
+          </Link>{' '}
+          <br />
           これ届くことあるんかな
         </Typography>
-      </Grid>
-      <Grid item xs={12}>
-        <Typography variant="h6">つくったもの</Typography>
-        <Works />
       </Grid>
     </Grid>
   );
