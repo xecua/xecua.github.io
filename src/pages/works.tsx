@@ -31,7 +31,7 @@ type WorkItem = {
 const workItems: WorkItem[] = [
   {
     title: 'Arcaeaのやつ',
-    href: 'https://scoretool.koffein.dev',
+    href: 'https://scoretool.caffeine.page',
     description: `Typescript(React/Material UI)/Firebase
     スコアツールです
     APIが公開されてないのでスコアは手打ちしてね`,
