@@ -1,26 +1,6 @@
 import React from 'react';
-import { makeStyles, Box, Typography, Link } from '@material-ui/core';
+import { Box, Typography, Link, Stack } from '@mui/material';
 import * as utils from '@/utils';
-import '@/utils/extensions';
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    marginBlockStart: theme.spacing(2).addPxUnit(),
-    // marginInlineStart: theme.spacing(2).addPxUnit(),
-  },
-  box: {
-    marginBlockStart: theme.spacing(2).addPxUnit(),
-    // marginInlineStart: theme.spacing(2).addPxUnit(),
-  },
-  spacer: {
-    marginBlockEnd: theme.spacing(2).addPxUnit(),
-  },
-  // '@global': {
-  //   '.MuiTypography-body1': {
-  //     marginInlineStart: theme.spacing(2).addPxUnit(),
-  //   },
-  // },
-}));
 
 type WorkItem = {
   title: string;
@@ -28,23 +8,10 @@ type WorkItem = {
   description: string;
 };
 
-const workItems: WorkItem[] = [
-  {
-    title: 'Arcaeaのやつ',
-    href: 'https://scoretool.caffeine.page',
-    description: `Typescript(React/Material UI)/Firebase
-    スコアツールです
-    APIが公開されてないのでスコアは手打ちしてね`,
-  },
-];
-
-const Works: React.FC = () => {
-  const classes = useStyles();
-  const WorkItemComponent = <T extends string | number | symbol>(
-    props: WorkItem
-  ) => (
+const WorkItemComponent = (props: WorkItem) => {
+  return (
     <>
-      <Box className={classes.box}>
+      <Box sx={{ marginBlockStart: 2 }}>
         <Typography variant="h6">
           {typeof props.href !== 'undefined' ? (
             <Link href={props.href}>{props.title}</Link>
@@ -58,8 +25,47 @@ const Works: React.FC = () => {
       </Typography>
     </>
   );
+};
 
-  return <Box className={classes.root}>{workItems.map(WorkItemComponent)}</Box>;
+const created: WorkItem[] = [
+  {
+    title: 'Arcaeaのやつ',
+    href: 'https://scoretool.caffeine.page',
+    description: `Typescript(React/Material UI)/Firebase
+    スコアツールです
+    APIが公開されてないのでスコアは手打ちしてね`,
+  },
+];
+
+const written: WorkItem[] = [
+  {
+    title: '「細粒度履歴追跡のための増分的なリポジトリ変換ツールの設計と実装」',
+    href: 'http://jssst.or.jp/files/user/taikai/2021/papers/37-L.pdf',
+    description: '(日本ソフトウェア科学会第38回大会講演論文集)',
+  },
+];
+
+const Works: React.FC = () => {
+  return (
+    <Stack spacing={4} sx={{ marginBlockStart: 2 }}>
+      <Box>
+        <Typography variant="h5" fontWeight={700}>
+          つくったもの
+        </Typography>
+        {created.map((item, i) => (
+          <WorkItemComponent key={i} {...item} />
+        ))}
+      </Box>
+      <Box>
+        <Typography variant="h5" fontWeight={700}>
+          かいたもの
+        </Typography>
+        {written.map((item, i) => (
+          <WorkItemComponent key={i} {...item} />
+        ))}
+      </Box>
+    </Stack>
+  );
 };
 
 export default Works;

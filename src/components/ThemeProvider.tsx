@@ -1,29 +1,43 @@
 import React from 'react';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import {
+  createTheme,
+  ThemeProvider,
+  StyledEngineProvider,
+} from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 
-const CustomThemeProvider: React.FC = (props) => {
+export const PrefersDarkModeContext = React.createContext(null);
+
+export const CustomThemeProvider: React.FC = (props) => {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  const [prefersDarkModeManual, setPrefersDarkModeManual] =
+    React.useState(false);
 
   const theme = React.useMemo(
     () =>
-      createMuiTheme({
+      createTheme({
         palette: {
-          type: prefersDarkMode ? 'dark' : 'light',
+          mode: prefersDarkMode || prefersDarkModeManual ? 'dark' : 'light',
           primary: { main: prefersDarkMode ? '#52A6FB' : '#0067D3' },
           secondary: { main: prefersDarkMode ? '#a1887f' : '#5d4037' },
         },
       }),
-    [prefersDarkMode]
+    [prefersDarkMode, prefersDarkModeManual]
   );
 
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      {props.children}
-    </ThemeProvider>
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <PrefersDarkModeContext.Provider
+          value={{
+            prefersDarkMode: prefersDarkModeManual,
+            setPrefersDarkMode: setPrefersDarkModeManual,
+          }}>
+          {props.children}
+        </PrefersDarkModeContext.Provider>
+      </ThemeProvider>
+    </StyledEngineProvider>
   );
 };
-
-export default CustomThemeProvider;

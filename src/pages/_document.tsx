@@ -1,26 +1,55 @@
 import React from 'react';
-import Document from 'next/document';
-import { ServerStyleSheets } from '@material-ui/core/styles';
+import Document, { Html, Head, Main, NextScript } from 'next/document';
+import { createEmotionCache } from '@/utils/createEmotionCache';
+import createEmotionServer from '@emotion/server/create-instance';
 
-export default class MyDocument extends Document {}
+// Avoid FOUC: https://github.com/mui-org/material-ui/blob/v5.3.1/examples/nextjs-with-typescript/pages/_document.tsx
+export default class MyDocument extends Document {
+  render() {
+    return (
+      <Html>
+        <Head>
+          {/* Inject MUI styles first to match with the prepend: true configuration. */}
+          {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+          {(this.props as any).emotionStyleTags}
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
+  }
+}
 
 MyDocument.getInitialProps = async (ctx) => {
-  const sheets = new ServerStyleSheets();
   const originalRenderPage = ctx.renderPage;
+  const cache = createEmotionCache();
+  const { extractCriticalToChunks } = createEmotionServer(cache);
 
   ctx.renderPage = () =>
     originalRenderPage({
-      enhanceApp: (App) => (props) => sheets.collect(<App {...props} />),
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      enhanceApp: (App: any) =>
+        function EnhanceApp(props) {
+          return <App emotionCache={cache} {...props} />;
+        },
     });
 
   const initialProps = await Document.getInitialProps(ctx);
 
+  const emotionStyles = extractCriticalToChunks(initialProps.html);
+  const emotionStyleTags = emotionStyles.styles.map((style) => (
+    <style
+      data-emotion={`${style.key} ${style.ids.join(' ')}`}
+      key={style.key}
+      // eslint-disable-next-line react/no-danger
+      dangerouslySetInnerHTML={{ __html: style.css }}
+    />
+  ));
+
   return {
     ...initialProps,
-    // Styles fragment is rendered after the app and page rendering finish.
-    styles: [
-      ...React.Children.toArray(initialProps.styles),
-      sheets.getStyleElement(),
-    ],
+    emotionStyleTags,
   };
 };
