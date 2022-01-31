@@ -14,6 +14,7 @@ import {
   // SvgIconProps,
   ListItemText,
   SwipeableDrawer,
+  useMediaQuery,
 } from '@mui/material';
 import {
   Menu as MenuIcon,
@@ -48,6 +49,11 @@ type Menu<T extends OverridableTypeMap> = {
 
 const Header: React.FC = () => {
   const router = useRouter();
+
+  const prefersDarkModeOriginal = useMediaQuery(
+    '(prefers-color-scheme: dark)',
+    { noSsr: true }
+  );
   const { prefersDarkMode, setPrefersDarkMode } = useContext(
     PrefersDarkModeContext
   );
@@ -128,9 +134,11 @@ const Header: React.FC = () => {
               flexGrow: 1,
             }}
           />
-          <IconButton onClick={() => setPrefersDarkMode(!prefersDarkMode)}>
-            <BrightnessMedium />
-          </IconButton>
+          {prefersDarkModeOriginal ? null : (
+            <IconButton onClick={() => setPrefersDarkMode(!prefersDarkMode)}>
+              <BrightnessMedium />
+            </IconButton>
+          )}
         </Toolbar>
       </AppBar>
       <Hidden smUp>

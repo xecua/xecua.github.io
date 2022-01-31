@@ -10,24 +10,20 @@ import CssBaseline from '@mui/material/CssBaseline';
 export const PrefersDarkModeContext = React.createContext(null);
 
 export const CustomThemeProvider: React.FC = (props) => {
-  const prefersDarkModeOriginal = useMediaQuery(
-    '(prefers-color-scheme: dark)',
-    { noSsr: true }
-  );
-  const [prefersDarkMode, setPrefersDarkMode] = React.useState(
-    prefersDarkModeOriginal
-  );
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  const [prefersDarkModeManual, setPrefersDarkModeManual] =
+    React.useState(false);
 
   const theme = React.useMemo(
     () =>
       createTheme({
         palette: {
-          mode: prefersDarkMode ? 'dark' : 'light',
+          mode: prefersDarkMode || prefersDarkModeManual ? 'dark' : 'light',
           primary: { main: prefersDarkMode ? '#52A6FB' : '#0067D3' },
           secondary: { main: prefersDarkMode ? '#a1887f' : '#5d4037' },
         },
       }),
-    [prefersDarkMode]
+    [prefersDarkMode, prefersDarkModeManual]
   );
 
   return (
@@ -36,8 +32,8 @@ export const CustomThemeProvider: React.FC = (props) => {
         <CssBaseline />
         <PrefersDarkModeContext.Provider
           value={{
-            prefersDarkMode,
-            setPrefersDarkMode,
+            prefersDarkMode: prefersDarkModeManual,
+            setPrefersDarkMode: setPrefersDarkModeManual,
           }}>
           {props.children}
         </PrefersDarkModeContext.Provider>
