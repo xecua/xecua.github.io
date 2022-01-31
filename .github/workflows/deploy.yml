@@ -26,5 +26,5 @@ jobs:
         with:
           personal_token: ${{ secrets.XECUA_PERSONAL_TOKEN }}
           publish_dir: ./out
-          publish_branch: master  # <username>.github.io constraint
-          cname: koffein.dev
+          publish_branch: master # <username>.github.io constraint
+          cname: caffeine.page
