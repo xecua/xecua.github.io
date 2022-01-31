@@ -1,26 +1,6 @@
 import React from 'react';
-import { makeStyles, Box, Typography, Link } from '@material-ui/core';
+import { Box, Typography, Link } from '@mui/material';
 import * as utils from '@/utils';
-import '@/utils/extensions';
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    marginBlockStart: theme.spacing(2).addPxUnit(),
-    // marginInlineStart: theme.spacing(2).addPxUnit(),
-  },
-  box: {
-    marginBlockStart: theme.spacing(2).addPxUnit(),
-    // marginInlineStart: theme.spacing(2).addPxUnit(),
-  },
-  spacer: {
-    marginBlockEnd: theme.spacing(2).addPxUnit(),
-  },
-  // '@global': {
-  //   '.MuiTypography-body1': {
-  //     marginInlineStart: theme.spacing(2).addPxUnit(),
-  //   },
-  // },
-}));
 
 type WorkItem = {
   title: string;
@@ -38,13 +18,10 @@ const workItems: WorkItem[] = [
   },
 ];
 
-const Works: React.FC = () => {
-  const classes = useStyles();
-  const WorkItemComponent = <T extends string | number | symbol>(
-    props: WorkItem
-  ) => (
+const WorkItemComponent = (props: WorkItem) => {
+  return (
     <>
-      <Box className={classes.box}>
+      <Box sx={{ marginBlockStart: 2 }}>
         <Typography variant="h6">
           {typeof props.href !== 'undefined' ? (
             <Link href={props.href}>{props.title}</Link>
@@ -58,8 +35,16 @@ const Works: React.FC = () => {
       </Typography>
     </>
   );
+};
 
-  return <Box className={classes.root}>{workItems.map(WorkItemComponent)}</Box>;
+const Works: React.FC = () => {
+  return (
+    <Box sx={{ marginBlockStart: 2 }}>
+      {workItems.map((item, i) => (
+        <WorkItemComponent key={i} {...item} />
+      ))}
+    </Box>
+  );
 };
 
 export default Works;

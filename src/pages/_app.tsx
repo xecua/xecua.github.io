@@ -1,38 +1,31 @@
 // custom app
 import React from 'react';
 import { AppProps } from 'next/app';
-import ThemeProvider from '@/components/ThemeProvider';
+import { CustomThemeProvider as ThemeProvider } from '@/components/ThemeProvider';
 import Header from '@/components/Header';
-import { loadCSS } from 'fg-loadcss';
-import { Container, Divider, Typography } from '@material-ui/core';
+import { Container } from '@mui/material';
+import { EmotionCache } from '@emotion/cache';
+import { createEmotionCache } from '@/utils/createEmotionCache';
+import { CacheProvider } from '@emotion/react';
+
+interface MyAppProps extends AppProps {
+  emotionCache?: EmotionCache;
+}
+
+const clientSideEmotionCache = createEmotionCache();
 
 // eslint-disable-next-line react/prop-types
-const App: React.FC<AppProps> = ({ Component, pageProps }) => {
-  React.useEffect(() => {
-    // Remove the server-side injected CSS.
-    const jssStyles = document.querySelector('#jss-server-side');
-    if (jssStyles) {
-      jssStyles.parentElement.removeChild(jssStyles);
-    }
-
-    // load FontAwesome.
-    const node = loadCSS(
-      'https://use.fontawesome.com/releases/v5.15.1/css/all.css',
-      document.querySelector('#font-awesome-css')
-    );
-
-    return () => {
-      node.parentNode.removeChild(node);
-    };
-  }, []);
-
+const App: React.FC<MyAppProps> = (props) => {
+  const { Component, pageProps, emotionCache = clientSideEmotionCache } = props;
   return (
-    <ThemeProvider>
-      <Header />
-      <Container>
-        <Component {...pageProps} />
-      </Container>
-    </ThemeProvider>
+    <CacheProvider value={emotionCache}>
+      <ThemeProvider>
+        <Header />
+        <Container>
+          <Component {...pageProps} />
+        </Container>
+      </ThemeProvider>
+    </CacheProvider>
   );
 };
 
