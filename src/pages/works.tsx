@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, Link } from '@mui/material';
+import { Box, Typography, Link, Stack } from '@mui/material';
 import * as utils from '@/utils';
 
 type WorkItem = {
@@ -7,16 +7,6 @@ type WorkItem = {
   href?: string;
   description: string;
 };
-
-const workItems: WorkItem[] = [
-  {
-    title: 'Arcaeaのやつ',
-    href: 'https://scoretool.caffeine.page',
-    description: `Typescript(React/Material UI)/Firebase
-    スコアツールです
-    APIが公開されてないのでスコアは手打ちしてね`,
-  },
-];
 
 const WorkItemComponent = (props: WorkItem) => {
   return (
@@ -37,13 +27,44 @@ const WorkItemComponent = (props: WorkItem) => {
   );
 };
 
+const created: WorkItem[] = [
+  {
+    title: 'Arcaeaのやつ',
+    href: 'https://scoretool.caffeine.page',
+    description: `Typescript(React/Material UI)/Firebase
+    スコアツールです
+    APIが公開されてないのでスコアは手打ちしてね`,
+  },
+];
+
+const written: WorkItem[] = [
+  {
+    title: '「細粒度履歴追跡のための増分的なリポジトリ変換ツールの設計と実装」',
+    href: 'http://jssst.or.jp/files/user/taikai/2021/papers/37-L.pdf',
+    description: '(日本ソフトウェア科学会第38回大会講演論文集)',
+  },
+];
+
 const Works: React.FC = () => {
   return (
-    <Box sx={{ marginBlockStart: 2 }}>
-      {workItems.map((item, i) => (
-        <WorkItemComponent key={i} {...item} />
-      ))}
-    </Box>
+    <Stack spacing={4} sx={{ marginBlockStart: 2 }}>
+      <Box>
+        <Typography variant="h5" fontWeight={700}>
+          つくったもの
+        </Typography>
+        {created.map((item, i) => (
+          <WorkItemComponent key={i} {...item} />
+        ))}
+      </Box>
+      <Box>
+        <Typography variant="h5" fontWeight={700}>
+          かいたもの
+        </Typography>
+        {written.map((item, i) => (
+          <WorkItemComponent key={i} {...item} />
+        ))}
+      </Box>
+    </Stack>
   );
 };
 

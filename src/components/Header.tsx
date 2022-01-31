@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import {
   AppBar,
   Box,
@@ -6,23 +6,28 @@ import {
   Typography,
   IconButton,
   Hidden,
-  Drawer,
   List,
   ListItem,
-  Divider,
   SvgIconTypeMap,
   ListItemIcon,
   // SvgIcon,
   // SvgIconProps,
   ListItemText,
+  SwipeableDrawer,
 } from '@mui/material';
-import { Menu as MenuIcon, Person, Folder } from '@mui/icons-material';
+import {
+  Menu as MenuIcon,
+  Person,
+  Folder,
+  BrightnessMedium,
+} from '@mui/icons-material';
 import { useRouter } from 'next/router';
 import NextLink from 'next/link';
 import {
   OverridableComponent,
   OverridableTypeMap,
 } from '@mui/material/OverridableComponent';
+import { PrefersDarkModeContext } from './ThemeProvider';
 
 const drawerWidth = 240;
 
@@ -43,6 +48,9 @@ type Menu<T extends OverridableTypeMap> = {
 
 const Header: React.FC = () => {
   const router = useRouter();
+  const { prefersDarkMode, setPrefersDarkMode } = useContext(
+    PrefersDarkModeContext
+  );
 
   const [openDrawer, setOpenDrawer] = useState(false);
 
@@ -57,7 +65,7 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <AppBar position="fixed">
+      <AppBar position="sticky">
         <Toolbar>
           <IconButton
             aria-label="open drawer"
@@ -120,13 +128,17 @@ const Header: React.FC = () => {
               flexGrow: 1,
             }}
           />
+          <IconButton onClick={() => setPrefersDarkMode(!prefersDarkMode)}>
+            <BrightnessMedium />
+          </IconButton>
         </Toolbar>
       </AppBar>
-      <Toolbar /> {/* Placeholder */}
       <Hidden smUp>
-        <Drawer
+        <SwipeableDrawer
           open={openDrawer}
           aria-label="drawer"
+          anchor="top"
+          onOpen={toggleDrawer}
           onClose={toggleDrawer}
           sx={{
             inlineSize: drawerWidth,
@@ -135,7 +147,6 @@ const Header: React.FC = () => {
             keepMounted: true,
           }}>
           <Toolbar />
-          <Divider />
           <List>
             {menuItems.map((item, i) => (
               <NextLink href={item.link} key={i}>
@@ -151,7 +162,7 @@ const Header: React.FC = () => {
               </NextLink>
             ))}
           </List>
-        </Drawer>
+        </SwipeableDrawer>
       </Hidden>
     </>
   );
