@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   Typography,
-  makeStyles,
   Grid,
   Avatar,
   Link,
@@ -10,51 +9,33 @@ import {
   ListItemIcon,
   ListItemText,
   Icon,
-} from '@material-ui/core';
-import '@/utils/extensions';
-import { Edit, GitHub, Mail, Twitter } from '@material-ui/icons';
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    marginBlockStart: theme.spacing(2).addPxUnit(),
-  },
-  icon: {
-    width: '100%',
-    height: 'auto',
-  },
-  linkList: {
-    width: '100%',
-    maxWidth: '20em',
-  },
-  header: {
-    borderBottom: 'solid 2px',
-  },
-  underLined: {
-    textDecoration: 'underline',
-  },
-  indent1: {
-    marginInlineStart: theme.spacing(2).addPxUnit(),
-  },
-  indent2: {
-    marginInlineStart: theme.spacing(4).addPxUnit(),
-  },
-}));
+} from '@mui/material';
+import { Edit, GitHub, Mail, Twitter } from '@mui/icons-material';
 
 const Index: React.FC = () => {
-  const classes = useStyles();
   return (
     <Grid
-      className={classes.root}
+      sx={{
+        marginBlockStart: 2,
+      }}
       container
       spacing={4}
-      justify="space-evenly"
+      justifyContent="space-evenly"
       alignItems="flex-start">
       <Grid item container xs={12} spacing={4}>
         <Grid item xs={8} sm={4} md={2}>
-          <Avatar src="/icon.png" alt="icon" className={classes.icon} />
+          <Avatar
+            src="/icon.png"
+            alt="icon"
+            sx={{ width: '100%', height: 'auto' }}
+          />
         </Grid>
         <Grid xs item>
-          <List className={classes.linkList}>
+          <List
+            sx={{
+              width: '100%',
+              maxWidth: '20em',
+            }}>
             <ListItem
               component={Link}
               color="inherit"
@@ -63,7 +44,7 @@ const Index: React.FC = () => {
                 <GitHub />
               </ListItemIcon>
               <ListItemText
-                className={classes.underLined}
+                sx={{ textDecoration: 'underline' }}
                 color="inherit"
                 primary="@xecua"
               />
@@ -76,7 +57,7 @@ const Index: React.FC = () => {
                 <Twitter />
               </ListItemIcon>
               <ListItemText
-                className={classes.underLined}
+                sx={{ textDecoration: 'underline' }}
                 color="inherit"
                 primary="@xecual"
               />
@@ -95,7 +76,7 @@ const Index: React.FC = () => {
                 <Edit />
               </ListItemIcon>
               <ListItemText
-                className={classes.underLined}
+                sx={{ textDecoration: 'underline' }}
                 color="inherit"
                 primary="ぶろぐ"
               />
@@ -115,92 +96,92 @@ const Index: React.FC = () => {
         </Typography>
         <Grid container direction="column">
           <Grid item>
-            <Typography variant="body1" className={classes.indent1}>
+            <Typography variant="body1" sx={{ marginInlineStart: 2 }}>
               ゲーム
             </Typography>
-            <Typography variant="body2" paragraph className={classes.indent2}>
+            <Typography variant="body2" paragraph sx={{ marginInlineStart: 4 }}>
               最近は専ら音楽ゲーム(SDVX(SV-1322-4960)、オンゲキ、Arcaea(660416079))。あとははらがみ(807301671)とか
             </Typography>
           </Grid>
           <Grid item>
-            <Typography variant="body1" className={classes.indent1}>
+            <Typography variant="body1" sx={{ marginInlineStart: 2 }}>
               PCいじり
             </Typography>
-            <Typography variant="body2" paragraph className={classes.indent2}>
+            <Typography variant="body2" paragraph sx={{ marginInlineStart: 4 }}>
               主にTwitterのような気もする たまにプをします
             </Typography>
-            <Typography variant="body2" paragraph className={classes.indent2}>
+            <Typography variant="body2" paragraph sx={{ marginInlineStart: 4 }}>
               Skills
-              <List dense>
-                <ListItem>
-                  <ListItemText
-                    primary={
-                      <>
-                        <b>Python</b>{' '}
-                        <Icon fontSize="inherit" className="fab fa-python" />
-                      </>
-                    }
-                    secondary="MLではなく汎用計算機として。あとはDjangoとか"
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemText
-                    primary={
-                      <>
-                        <b>Rust</b>{' '}
-                        <Icon fontSize="inherit" className="fab fa-rust" />
-                      </>
-                    }
-                    secondary="習熟度はそんなに高くないけどすき"
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemText
-                    primary={
-                      <>
-                        <b>JavaScript/TypeScript</b>{' '}
-                        <Icon fontSize="inherit" className="fab fa-js" />
-                      </>
-                    }
-                    secondary="脳死Reactマン"
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemText
-                    primary={
-                      <>
-                        <b>Unix shell</b>{' '}
-                        <Icon fontSize="inherit" className="fas fa-terminal" />
-                      </>
-                    }
-                    secondary="(黒い画面恐怖症ではないという程度の意味です)"
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemText primary="きょっぷろも少々(あっとこ緑)" />
-                </ListItem>
-                <ListItem>
-                  <ListItemText primary="基本情報処理技術者試験" />
-                </ListItem>
-              </List>
             </Typography>
+            <List dense sx={{ marginInlineStart: 4 }}>
+              <ListItem>
+                <ListItemText
+                  primary={
+                    <>
+                      <b>Python</b>{' '}
+                      <Icon fontSize="inherit" className="fab fa-python" />
+                    </>
+                  }
+                  secondary="MLではなく汎用計算機として。あとはDjangoとか"
+                />
+              </ListItem>
+              <ListItem>
+                <ListItemText
+                  primary={
+                    <>
+                      <b>Rust</b>{' '}
+                      <Icon fontSize="inherit" className="fab fa-rust" />
+                    </>
+                  }
+                  secondary="習熟度はそんなに高くないけどすき"
+                />
+              </ListItem>
+              <ListItem>
+                <ListItemText
+                  primary={
+                    <>
+                      <b>JavaScript/TypeScript</b>{' '}
+                      <Icon fontSize="inherit" className="fab fa-js" />
+                    </>
+                  }
+                  secondary="脳死Reactマン"
+                />
+              </ListItem>
+              <ListItem>
+                <ListItemText
+                  primary={
+                    <>
+                      <b>Unix shell</b>{' '}
+                      <Icon fontSize="inherit" className="fas fa-terminal" />
+                    </>
+                  }
+                  secondary="(黒い画面恐怖症ではないという程度の意味です)"
+                />
+              </ListItem>
+              <ListItem>
+                <ListItemText primary="きょっぷろも少々(あっとこ緑)" />
+              </ListItem>
+              <ListItem>
+                <ListItemText primary="基本情報処理技術者試験" />
+              </ListItem>
+            </List>
           </Grid>
         </Grid>
       </Grid>
       <Grid item xs={12}>
         <Typography component="h2" variant="subtitle1">
-          その他リンク
+          そのリンク
         </Typography>
-        <Typography paragraph className={classes.indent1}>
+        <Typography paragraph sx={{ marginInlineStart: 1 }}>
           <Link href="https://pawoo.net/@xecua">Pawoo</Link> <br />
           Twitterが死んだ時のための冗長性です
         </Typography>
-        <Typography paragraph className={classes.indent1}>
+        <Typography paragraph sx={{ marginInlineStart: 1 }}>
           <Link href="https://trap.jp/author/xecua">traP Blog</Link> <br />
           所属しているサークルの枠で書いたやつ
           黒歴史的なやつもあるけど人生自体黒歴史なので気にしないことにします
         </Typography>
-        <Typography paragraph className={classes.indent1}>
+        <Typography paragraph sx={{ marginInlineStart: 1 }}>
           <Link href="https://www.amazon.jp/hz/wishlist/ls/1IO2VY7TGVLJM?ref_=wl_share">
             芋🥔
           </Link>{' '}
