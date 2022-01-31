@@ -1,90 +1,35 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import {
   AppBar,
-  makeStyles,
+  Box,
   Toolbar,
-  createStyles,
   Typography,
   IconButton,
   Hidden,
-  Drawer,
   List,
   ListItem,
-  Divider,
   SvgIconTypeMap,
   ListItemIcon,
-  ListItemText,
   // SvgIcon,
   // SvgIconProps,
-} from '@material-ui/core';
+  ListItemText,
+  SwipeableDrawer,
+} from '@mui/material';
 import {
-  GitHub,
-  Twitter,
   Menu as MenuIcon,
   Person,
   Folder,
-  Edit,
-} from '@material-ui/icons';
+  BrightnessMedium,
+} from '@mui/icons-material';
 import { useRouter } from 'next/router';
 import NextLink from 'next/link';
 import {
   OverridableComponent,
   OverridableTypeMap,
-} from '@material-ui/core/OverridableComponent';
-import clsx from 'clsx';
+} from '@mui/material/OverridableComponent';
+import { PrefersDarkModeContext } from './ThemeProvider';
 
 const drawerWidth = 240;
-
-const useStyles = makeStyles((theme) =>
-  createStyles({
-    title: {
-      marginBlockStart: theme.spacing(2),
-    },
-    drawer: {
-      inlineSize: drawerWidth,
-    },
-    drawerPaper: {
-      inlineSize: drawerWidth,
-    },
-    menuButton: {
-      [theme.breakpoints.up('sm')]: {
-        display: 'none',
-      },
-    },
-    menuItemWrapper: {
-      position: 'relative',
-      display: 'inline-block',
-      marginRight: theme.spacing(2),
-      boxSizing: 'content-box',
-      cursor: 'default',
-    },
-    menuItem: {
-      boxSizing: 'content-box',
-      '&::after': {
-        position: 'absolute',
-        display: 'block',
-        content: '""',
-        inlineSize: '100%',
-        blockSize: '2px',
-        background: theme.palette.background.default,
-      },
-    },
-    menuItemNotSelected: {
-      '&::after': {
-        transitionProperty: 'transform',
-        transitionDuration: '.5s',
-        transform: 'scaleX(0)',
-        transformOrigin: 'center bottom',
-      },
-      '&:hover::after': {
-        transform: 'scaleX(1)',
-      },
-    },
-    spacer: {
-      flexGrow: 1,
-    },
-  })
-);
 
 type Menu<T extends OverridableTypeMap> = {
   icon: OverridableComponent<T>;
@@ -102,8 +47,10 @@ type Menu<T extends OverridableTypeMap> = {
 // );
 
 const Header: React.FC = () => {
-  const classes = useStyles();
   const router = useRouter();
+  const { prefersDarkMode, setPrefersDarkMode } = useContext(
+    PrefersDarkModeContext
+  );
 
   const [openDrawer, setOpenDrawer] = useState(false);
 
@@ -113,54 +60,93 @@ const Header: React.FC = () => {
 
   const menuItems: Menu<SvgIconTypeMap<Record<string, unknown>, 'svg'>>[] = [
     { icon: Person, link: '/', label: 'プロフィール' },
-    { icon: Folder, link: '/works', label: 'つくったもの' },
+    { icon: Folder, link: '/works', label: 'Works' },
   ];
 
   return (
     <>
-      <AppBar position="fixed">
+      <AppBar position="sticky">
         <Toolbar>
           <IconButton
             aria-label="open drawer"
             onClick={toggleDrawer}
-            className={classes.menuButton}>
+            sx={{
+              display: {
+                md: 'none',
+              },
+            }}
+            size="large">
             <MenuIcon />
           </IconButton>
-          <Hidden xsDown>
+          <Hidden smDown>
             {menuItems.map((item, i) => (
               <NextLink href={item.link} key={i} passHref>
-                <span className={classes.menuItemWrapper}>
+                <Box
+                  component="span"
+                  sx={{
+                    position: 'relative',
+                    display: 'inline-block',
+                    marginRight: 2,
+                    boxSizing: 'content-box',
+                    cursor: 'default',
+                    minWidth: '6em',
+                    textAlign: 'center',
+                  }}>
                   <Typography
                     variant="button"
                     component="div"
-                    className={clsx(
-                      classes.menuItem,
-                      router.pathname !== item.link
-                        ? classes.menuItemNotSelected
-                        : ''
-                    )}>
+                    sx={{
+                      boxSizing: 'content-box',
+                      '&::after': {
+                        position: 'absolute',
+                        display: 'block',
+                        content: '""',
+                        inlineSize: '100%',
+                        blockSize: '2px',
+                        background: (theme) => theme.palette.background.default,
+                        ...(router.pathname !== item.link
+                          ? {
+                              transitionProperty: 'transform',
+                              transitionDuration: '.5s',
+                              transform: 'scaleX(0)',
+                              transformOrigin: 'center bottom',
+                            }
+                          : {}),
+                      },
+                      '&:hover::after': {
+                        transform: 'scaleX(1)',
+                      },
+                    }}>
                     {item.label}
                   </Typography>
-                </span>
+                </Box>
               </NextLink>
             ))}
           </Hidden>
-          <div className={classes.spacer} />
+          <Box
+            sx={{
+              flexGrow: 1,
+            }}
+          />
+          <IconButton onClick={() => setPrefersDarkMode(!prefersDarkMode)}>
+            <BrightnessMedium />
+          </IconButton>
         </Toolbar>
       </AppBar>
-      <Toolbar /> {/* Placeholder */}
       <Hidden smUp>
-        <Drawer
+        <SwipeableDrawer
           open={openDrawer}
           aria-label="drawer"
+          anchor="top"
+          onOpen={toggleDrawer}
           onClose={toggleDrawer}
-          className={classes.drawer}
-          classes={{ paper: classes.drawerPaper }}
+          sx={{
+            inlineSize: drawerWidth,
+          }}
           ModalProps={{
             keepMounted: true,
           }}>
           <Toolbar />
-          <Divider />
           <List>
             {menuItems.map((item, i) => (
               <NextLink href={item.link} key={i}>
@@ -176,7 +162,7 @@ const Header: React.FC = () => {
               </NextLink>
             ))}
           </List>
-        </Drawer>
+        </SwipeableDrawer>
       </Hidden>
     </>
   );
