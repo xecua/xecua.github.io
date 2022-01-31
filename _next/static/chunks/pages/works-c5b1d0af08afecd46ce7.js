@@ -1,1 +1,0 @@
-_N_E=(window.webpackJsonp_N_E=window.webpackJsonp_N_E||[]).push([[9],{at7P:function(_,n,w){(window.__NEXT_P=window.__NEXT_P||[]).push(["/works",function(){return w("Q3IO")}])}},[["at7P",0,1,2,3]]]);
