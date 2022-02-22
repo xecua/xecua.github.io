@@ -66,7 +66,7 @@ const Index: React.FC = () => {
               <ListItemIcon>
                 <Mail />
               </ListItemIcon>
-              <ListItemText primary="Gmail: courser4848" />
+              <ListItemText primary="contact[at]caffeine[dot]page" />
             </ListItem>
             <ListItem
               component={Link}
