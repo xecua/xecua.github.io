@@ -101,81 +101,118 @@ const Index: React.FC = () => {
         </Typography>
         <Grid container direction="column">
           <Grid item>
-            <Typography variant="body1" sx={{ marginInlineStart: 2 }}>
+            <Typography variant="body1" paragraph sx={{ marginInlineStart: 2 }}>
               ゲーム
-            </Typography>
-            <Typography variant="body2" paragraph sx={{ marginInlineStart: 4 }}>
-              最近は専ら音楽ゲーム(SDVX(SV-1322-4960)、オンゲキ、Arcaea(660416079))。あとははらがみ(807301671)とか
+              <Typography
+                variant="body2"
+                paragraph
+                sx={{ marginInlineStart: 4 }}>
+                最近は専ら音楽ゲーム(SDVX(SV-1322-4960)、オンゲキ、Arcaea(660416079))。あとははらがみ(807301671)とか
+              </Typography>
             </Typography>
           </Grid>
           <Grid item>
-            <Typography variant="body1" sx={{ marginInlineStart: 2 }}>
+            <Typography variant="body1" paragraph sx={{ marginInlineStart: 2 }}>
               PCいじり
+              <Typography
+                variant="body2"
+                paragraph
+                sx={{ marginInlineStart: 4 }}>
+                主にTwitterのような気もする たまにプをします
+              </Typography>
+              <Typography variant="body2" sx={{ marginInlineStart: 4 }}>
+                Skills
+                <List dense sx={{ marginInlineStart: 4 }}>
+                  <ListItem>
+                    <ListItemText
+                      primary={
+                        <>
+                          <b>Python</b>
+                          <Icon fontSize="inherit" className="fab fa-python" />
+                        </>
+                      }
+                      secondary="MLではなく汎用計算機として。あとはDjangoとか"
+                    />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemText
+                      primary={
+                        <>
+                          <b>Rust</b>
+                          <Icon fontSize="inherit" className="fab fa-rust" />
+                        </>
+                      }
+                      secondary="習熟度はそんなに高くないけどすき"
+                    />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemText
+                      primary={
+                        <>
+                          <b>JavaScript/TypeScript</b>
+                          <Icon fontSize="inherit" className="fab fa-js" />
+                        </>
+                      }
+                      secondary="脳死Reactマン"
+                    />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemText
+                      primary={
+                        <>
+                          <b>Unix shell</b>
+                          <Icon
+                            fontSize="inherit"
+                            className="fas fa-terminal"
+                          />
+                        </>
+                      }
+                      secondary="(黒い画面恐怖症ではないという程度の意味です)"
+                    />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemText primary="きょっぷろも少々(あっとこ緑)" />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemText primary="所持資格: 基本情報処理技術者試験 / 第1級アマチュア無線技師 / 普通自動車運転免許" />
+                  </ListItem>
+                </List>
+              </Typography>
             </Typography>
-            <Typography variant="body2" paragraph sx={{ marginInlineStart: 4 }}>
-              主にTwitterのような気もする たまにプをします
-            </Typography>
-            <Typography variant="body2" paragraph sx={{ marginInlineStart: 4 }}>
-              Skills
-            </Typography>
-            <List dense sx={{ marginInlineStart: 4 }}>
-              <ListItem>
-                <ListItemText
-                  primary={
-                    <>
-                      <b>Python</b>{' '}
-                      <Icon fontSize="inherit" className="fab fa-python" />
-                    </>
-                  }
-                  secondary="MLではなく汎用計算機として。あとはDjangoとか"
-                />
-              </ListItem>
-              <ListItem>
-                <ListItemText
-                  primary={
-                    <>
-                      <b>Rust</b>{' '}
-                      <Icon fontSize="inherit" className="fab fa-rust" />
-                    </>
-                  }
-                  secondary="習熟度はそんなに高くないけどすき"
-                />
-              </ListItem>
-              <ListItem>
-                <ListItemText
-                  primary={
-                    <>
-                      <b>JavaScript/TypeScript</b>{' '}
-                      <Icon fontSize="inherit" className="fab fa-js" />
-                    </>
-                  }
-                  secondary="脳死Reactマン"
-                />
-              </ListItem>
-              <ListItem>
-                <ListItemText
-                  primary={
-                    <>
-                      <b>Unix shell</b>{' '}
-                      <Icon fontSize="inherit" className="fas fa-terminal" />
-                    </>
-                  }
-                  secondary="(黒い画面恐怖症ではないという程度の意味です)"
-                />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="きょっぷろも少々(あっとこ緑)" />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="基本情報処理技術者試験" />
-              </ListItem>
-            </List>
           </Grid>
         </Grid>
       </Grid>
       <Grid item xs={12}>
         <Typography component="h2" variant="subtitle1">
-          そのリンク
+          もってるもの
+        </Typography>
+        <Grid container direction="column">
+          <Grid item>
+            <Typography variant="body1" paragraph sx={{ marginInlineStart: 2 }}>
+              基本情報処理技術者試験
+            </Typography>
+          </Grid>
+          <Grid item>
+            <Typography variant="body1" paragraph sx={{ marginInlineStart: 2 }}>
+              第1級アマチュア無線技師
+              <Typography
+                variant="body2"
+                paragraph
+                sx={{ marginInlineStart: 4 }}>
+                開局はしてない(したい)
+              </Typography>
+            </Typography>
+          </Grid>
+          <Grid item>
+            <Typography variant="body1" paragraph sx={{ marginInlineStart: 2 }}>
+              普通自動車運転免許
+            </Typography>
+          </Grid>
+        </Grid>
+      </Grid>
+      <Grid item xs={12}>
+        <Typography component="h2" variant="subtitle1">
+          その他リンク
         </Typography>
         <Typography paragraph sx={{ marginInlineStart: 1 }}>
           <Link href="https://pawoo.net/@xecua">Pawoo</Link> <br />
@@ -189,7 +226,7 @@ const Index: React.FC = () => {
         <Typography paragraph sx={{ marginInlineStart: 1 }}>
           <Link href="https://www.amazon.jp/hz/wishlist/ls/1IO2VY7TGVLJM?ref_=wl_share">
             芋🥔
-          </Link>{' '}
+          </Link>
           <br />
           これ届くことあるんかな
         </Typography>
