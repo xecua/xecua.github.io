@@ -86,7 +86,12 @@ const Index: React.FC = () => {
       </Grid>
       <Grid item xs={12}>
         <Typography gutterBottom>
-          HNはxecua。読みは適当に。 大学院生(専攻: CS/研究分野: SE)です。
+          HNはxecua。読みは適当に(推奨はローマ字打ち「ぇくあ」、でも1文字目が読めないので「えくあ」で。この名前どうなんだって思ってましたが
+          <Link href="https://establife.tokyo/character/">
+            同名のかわいい女の子が存在した
+          </Link>
+          ので推していきます)。 <br />
+          大学院生(専攻: CS/研究分野: SE)です。 <br />
           これといった目的もなく生きているのでそのときにやりたいことをやっています
         </Typography>
       </Grid>
