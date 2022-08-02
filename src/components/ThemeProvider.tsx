@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import {
   createTheme,
@@ -9,7 +9,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 
 export const PrefersDarkModeContext = React.createContext(null);
 
-export const CustomThemeProvider: React.FC = (props) => {
+export const CustomThemeProvider: React.FC<PropsWithChildren> = (props) => {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
   const [prefersDarkModeManual, setPrefersDarkModeManual] =
     React.useState(false);
