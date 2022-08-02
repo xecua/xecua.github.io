@@ -86,12 +86,9 @@ const Index: React.FC = () => {
       </Grid>
       <Grid item xs={12}>
         <Typography gutterBottom>
-          HNはxecua。読みは適当に(推奨はローマ字打ち「ぇくあ」、でも1文字目が読めないので「えくあ」で。この名前どうなんだって思ってましたが
-          <Link href="https://establife.tokyo/character/">
-            同名のかわいい女の子が存在した
-          </Link>
-          ので推していきます)。 <br />
-          大学院生(専攻: CS/研究分野: SE)です。 <br />
+          HNはxecua。読みは適当に(推奨はローマ字打ち「ぇくあ」、1文字目が読めないので「えくあ」で)。
+          <br />
+          大学院でソフトウェア工学的なやつをやっています。 <br />
           これといった目的もなく生きているのでそのときにやりたいことをやっています
         </Typography>
       </Grid>
@@ -103,119 +100,87 @@ const Index: React.FC = () => {
           <Grid item>
             <Typography variant="body1" paragraph sx={{ marginInlineStart: 2 }}>
               ゲーム
-              <Typography
-                variant="body2"
-                paragraph
-                sx={{ marginInlineStart: 4 }}>
-                最近は専ら音楽ゲーム(SDVX(SV-1322-4960)、オンゲキ、Arcaea(660416079))。あとははらがみ(807301671)とか
-              </Typography>
+            </Typography>
+            <Typography variant="body2" paragraph sx={{ marginInlineStart: 4 }}>
+              最近は専ら音楽ゲーム(SDVX(SV-1322-4960)、Arcaea(660416079)、オンゲキ(頻度落ち気味)、テトコネ(回数増やしたい))。あとははらがみ(807301671)とか
             </Typography>
           </Grid>
           <Grid item>
             <Typography variant="body1" paragraph sx={{ marginInlineStart: 2 }}>
               PCいじり
-              <Typography
-                variant="body2"
-                paragraph
-                sx={{ marginInlineStart: 4 }}>
-                主にTwitterのような気もする たまにプをします
-              </Typography>
-              <Typography variant="body2" sx={{ marginInlineStart: 4 }}>
-                Skills
-                <List dense sx={{ marginInlineStart: 4 }}>
-                  <ListItem>
-                    <ListItemText
-                      primary={
-                        <>
-                          <b>Python</b>
-                          <Icon fontSize="inherit" className="fab fa-python" />
-                        </>
-                      }
-                      secondary="MLではなく汎用計算機として。あとはDjangoとか"
-                    />
-                  </ListItem>
-                  <ListItem>
-                    <ListItemText
-                      primary={
-                        <>
-                          <b>Rust</b>
-                          <Icon fontSize="inherit" className="fab fa-rust" />
-                        </>
-                      }
-                      secondary="習熟度はそんなに高くないけどすき"
-                    />
-                  </ListItem>
-                  <ListItem>
-                    <ListItemText
-                      primary={
-                        <>
-                          <b>JavaScript/TypeScript</b>
-                          <Icon fontSize="inherit" className="fab fa-js" />
-                        </>
-                      }
-                      secondary="脳死Reactマン"
-                    />
-                  </ListItem>
-                  <ListItem>
-                    <ListItemText
-                      primary={
-                        <>
-                          <b>Unix shell</b>
-                          <Icon
-                            fontSize="inherit"
-                            className="fas fa-terminal"
-                          />
-                        </>
-                      }
-                      secondary="(黒い画面恐怖症ではないという程度の意味です)"
-                    />
-                  </ListItem>
-                  <ListItem>
-                    <ListItemText primary="きょっぷろも少々(あっとこ緑)" />
-                  </ListItem>
-                  <ListItem>
-                    <ListItemText primary="所持資格: 基本情報処理技術者試験 / 第1級アマチュア無線技師 / 普通自動車運転免許" />
-                  </ListItem>
-                </List>
-              </Typography>
             </Typography>
+            <Typography variant="body2" paragraph sx={{ marginInlineStart: 4 }}>
+              主にTwitterのような気もする たまにプをします
+            </Typography>
+            <Typography variant="body2" sx={{ marginInlineStart: 4 }}>
+              Skills
+            </Typography>
+            <List dense sx={{ marginInlineStart: 4 }}>
+              <ListItem>
+                <ListItemText
+                  primary={
+                    <>
+                      <b>Python</b>
+                      <Icon fontSize="inherit" className="fab fa-python" />
+                    </>
+                  }
+                  secondary="MLではなく汎用計算機として。あとはDjangoとか"
+                />
+              </ListItem>
+              <ListItem>
+                <ListItemText
+                  primary={
+                    <>
+                      <b>Rust</b>
+                      <Icon fontSize="inherit" className="fab fa-rust" />
+                    </>
+                  }
+                  secondary="習熟度はそんなに高くないけどすき"
+                />
+              </ListItem>
+              <ListItem>
+                <ListItemText
+                  primary={
+                    <>
+                      <b>JavaScript/TypeScript</b>
+                      <Icon fontSize="inherit" className="fab fa-js" />
+                    </>
+                  }
+                  secondary="脳死Reactマン"
+                />
+              </ListItem>
+              <ListItem>
+                <ListItemText
+                  primary={
+                    <>
+                      <b>Unix shell</b>
+                      <Icon fontSize="inherit" className="fas fa-terminal" />
+                    </>
+                  }
+                  secondary="(黒い画面恐怖症ではないという程度の意味です)"
+                />
+              </ListItem>
+              <ListItem>
+                <ListItemText primary="きょっぷろも少々(あっとこ緑)" />
+              </ListItem>
+            </List>
           </Grid>
         </Grid>
       </Grid>
       <Grid item xs={12}>
         <Typography component="h2" variant="subtitle1">
-          もってるもの
+          所持資格: 基本情報処理技術者試験 / 第1級アマチュア無線技師 /
+          普通自動車運転免許
         </Typography>
-        <Grid container direction="column">
-          <Grid item>
-            <Typography variant="body1" paragraph sx={{ marginInlineStart: 2 }}>
-              基本情報処理技術者試験
-            </Typography>
-          </Grid>
-          <Grid item>
-            <Typography variant="body1" paragraph sx={{ marginInlineStart: 2 }}>
-              第1級アマチュア無線技師
-              <Typography
-                variant="body2"
-                paragraph
-                sx={{ marginInlineStart: 4 }}>
-                開局はしてない(したい)
-              </Typography>
-            </Typography>
-          </Grid>
-          <Grid item>
-            <Typography variant="body1" paragraph sx={{ marginInlineStart: 2 }}>
-              普通自動車運転免許
-            </Typography>
-          </Grid>
-        </Grid>
       </Grid>
       <Grid item xs={12}>
         <Typography component="h2" variant="subtitle1">
           その他リンク
         </Typography>
         <Typography paragraph sx={{ marginInlineStart: 1 }}>
-          <Link href="https://pawoo.net/@xecua">Pawoo</Link> <br />
+          <Link href="https://pawoo.net/@xecua">Pawoo</Link> /{' '}
+          <Link href="https://mstdn.jp/@xecua">mstdn.jp</Link>
+          <br />
           Twitterが死んだ時のための冗長性です
         </Typography>
         <Typography paragraph sx={{ marginInlineStart: 1 }}>
