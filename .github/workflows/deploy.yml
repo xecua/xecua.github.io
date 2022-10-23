@@ -1,18 +1,19 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
 name: deploy
 on:
   push:
     branches:
-      - dev
+      - main
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Node setup
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: '16'
       - name: Install
         run: yarn install --prod
       - name: Build
@@ -21,10 +22,18 @@ jobs:
         run: |
           yarn export
           touch out/.nojekyll
-      - name: deploy
-        uses: peaceiris/actions-gh-pages@v3
+      - uses: actions/upload-pages-artifact@v1
         with:
-          personal_token: ${{ secrets.XECUA_PERSONAL_TOKEN }}
-          publish_dir: ./out
-          publish_branch: master # <username>.github.io constraint
-          cname: caffeine.page
+          path: out
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v1
