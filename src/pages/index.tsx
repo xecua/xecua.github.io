@@ -88,7 +88,7 @@ const Index: React.FC = () => {
         <Typography gutterBottom>
           メアドは①を<code>@</code>に、②を<code>.</code>にしてください。
           <br />
-          PGP対応しています。公開鍵は<Link href="/key.asc">/key.asc</Link>に
+          PGP対応しています。公開鍵は<Link href="/key.asc">/key.asc</Link>とか<Link href="https://keys.openpgp.org">keys.openpgp.org</Link>に置いてます
         </Typography>
         <Typography gutterBottom>
           HNはxecua。読みは適当に(推奨はローマ字打ち「ぇくあ」、1文字目が読めないので「えくあ」で)。
