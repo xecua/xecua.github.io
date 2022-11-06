@@ -66,7 +66,7 @@ const Index: React.FC = () => {
               <ListItemIcon>
                 <Mail />
               </ListItemIcon>
-              <ListItemText primary="contact[at]caffeine[dot]page" />
+              <ListItemText primary="contact①caffeine②page" />
             </ListItem>
             <ListItem
               component={Link}
@@ -86,6 +86,11 @@ const Index: React.FC = () => {
       </Grid>
       <Grid item xs={12}>
         <Typography gutterBottom>
+          メアドは①を<code>@</code>に、②を<code>.</code>にしてください。
+          <br />
+          PGP対応しています。公開鍵は<Link href="/key.asc">/key.asc</Link>に
+        </Typography>
+        <Typography gutterBottom>
           HNはxecua。読みは適当に(推奨はローマ字打ち「ぇくあ」、1文字目が読めないので「えくあ」で)。
           <br />
           大学院でソフトウェア工学的なやつをやっています。 <br />
@@ -102,7 +107,7 @@ const Index: React.FC = () => {
               ゲーム
             </Typography>
             <Typography variant="body2" paragraph sx={{ marginInlineStart: 4 }}>
-              最近は専ら音楽ゲーム(SDVX(SV-1322-4960)、Arcaea(660416079)、オンゲキ(頻度落ち気味)、テトコネ(回数増やしたい))。あとははらがみ(807301671)とか
+              最近は専ら音楽ゲーム(SDVX(SV-1322-4960)、Arcaea(660416079)など)。あとははらがみ(807301671)とか
             </Typography>
           </Grid>
           <Grid item>
