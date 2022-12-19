@@ -88,7 +88,9 @@ const Index: React.FC = () => {
         <Typography gutterBottom>
           メアドは①を<code>@</code>に、②を<code>.</code>にしてください。
           <br />
-          PGP対応しています。公開鍵は<Link href="/key.asc">/key.asc</Link>とか<Link href="https://keys.openpgp.org">keys.openpgp.org</Link>に置いてます
+          PGP対応しています。公開鍵は<Link href="/key.asc">/key.asc</Link>とか
+          <Link href="https://keys.openpgp.org">keys.openpgp.org</Link>
+          に置いてます
         </Typography>
         <Typography gutterBottom>
           HNはxecua。読みは適当に(推奨はローマ字打ち「ぇくあ」、1文字目が読めないので「えくあ」で)。
@@ -183,8 +185,17 @@ const Index: React.FC = () => {
           その他リンク
         </Typography>
         <Typography paragraph sx={{ marginInlineStart: 1 }}>
-          <Link href="https://pawoo.net/@xecua">Pawoo</Link> /{' '}
-          <Link href="https://mstdn.jp/@xecua">mstdn.jp</Link>
+          <Link rel="me" href="https://mstdn.jp/@xecua">
+            mstdn.jp(多分メイン)
+          </Link>{' '}
+          /{' '}
+          <Link rel="me" href="https://pawoo.net/@xecua">
+            Pawoo(多分動かない)
+          </Link>{' '}
+          /{' '}
+          <Link rel="me" href="https://social.vivaldi.net/@xecua">
+            Vivaldi Social(多分動かない)
+          </Link>
           <br />
           Twitterが死んだ時のための冗長性です
         </Typography>
