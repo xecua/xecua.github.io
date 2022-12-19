@@ -14,13 +14,14 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '16'
+          cache: 'pnpm'
       - name: Install
-        run: yarn install --prod
+        run: pnpm install --prod
       - name: Build
-        run: yarn build
+        run: pnpm build
       - name: Export
         run: |
-          yarn export
+          pnpm export
           touch out/.nojekyll
       - uses: actions/upload-pages-artifact@v1
         with:
