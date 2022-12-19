@@ -13,29 +13,29 @@
     "export": "next export"
   },
   "dependencies": {
-    "@emotion/cache": "^11.10.0",
-    "@emotion/react": "^11.10.0",
+    "@emotion/cache": "^11.10.5",
+    "@emotion/react": "^11.10.5",
     "@emotion/server": "^11.10.0",
-    "@emotion/styled": "^11.10.0",
-    "@mui/icons-material": "^5.8.4",
-    "@mui/material": "^5.9.3",
-    "@mui/styles": "^5.9.3",
-    "@mui/system": "^5.9.3",
-    "@types/node": "^18.6.3",
-    "@types/react": "^18.0.15",
-    "next": "^12.2.3",
+    "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.11.0",
+    "@mui/material": "^5.11.0",
+    "@mui/styles": "^5.11.0",
+    "@mui/system": "^5.11.0",
+    "@types/node": "^18.11.17",
+    "@types/react": "^18.0.26",
+    "next": "^12.3.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "typescript": "^4.7.4"
+    "typescript": "^4.9.4"
   },
   "devDependencies": {
-    "@mui/codemod": "^5.9.3",
-    "@typescript-eslint/eslint-plugin": "^5.32.0",
-    "@typescript-eslint/parser": "^5.32.0",
-    "eslint": "^8.21.0",
+    "@mui/codemod": "^5.11.0",
+    "@typescript-eslint/eslint-plugin": "^5.46.1",
+    "@typescript-eslint/parser": "^5.46.1",
+    "eslint": "^8.30.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-react": "^7.31.11",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "prettier": "^2.7.1"
+    "prettier": "^2.8.1"
   }
 }
