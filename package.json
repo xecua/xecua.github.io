@@ -4,6 +4,7 @@
   "description": "GitHub Pages",
   "repository": "git@github.com:xecua/xecua.github.io.git",
   "author": "xecua <courser4848@gmail.com>",
+  "packageManager": "pnpm@7.18.2",
   "license": "MIT",
   "private": true,
   "scripts": {
