@@ -1,16 +1,9 @@
-import React from 'react';
-import {
-  Typography,
-  Grid,
-  Avatar,
-  Link,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  Icon,
-} from '@mui/material';
+import AccountCard from '@/components/AccountCard';
+// import AniListIcon from '@/components/icons/AniListIcon';
+import MastodonIcon from '@/components/icons/MastodonIcon';
 import { Edit, GitHub, Mail, Twitter } from '@mui/icons-material';
+import { Avatar, Grid, Link, Typography } from '@mui/material';
+import React from 'react';
 
 const Index: React.FC = () => {
   return (
@@ -30,70 +23,68 @@ const Index: React.FC = () => {
             sx={{ width: '100%', height: 'auto' }}
           />
         </Grid>
-        <Grid xs item>
-          <List
-            sx={{
-              width: '100%',
-              maxWidth: '20em',
-            }}>
-            <ListItem
-              component={Link}
-              color="inherit"
-              href="https://github.com/xecua">
-              <ListItemIcon>
-                <GitHub />
-              </ListItemIcon>
-              <ListItemText
-                sx={{ textDecoration: 'underline' }}
-                color="inherit"
-                primary="@xecua"
-              />
-            </ListItem>
-            <ListItem
-              component={Link}
-              color="inherit"
-              href="https://twitter.com/xecual">
-              <ListItemIcon>
-                <Twitter />
-              </ListItemIcon>
-              <ListItemText
-                sx={{ textDecoration: 'underline' }}
-                color="inherit"
-                primary="@xecual"
-              />
-            </ListItem>
-            <ListItem>
-              <ListItemIcon>
-                <Mail />
-              </ListItemIcon>
-              <ListItemText primary="contact①caffeine②page" />
-            </ListItem>
-            <ListItem
-              component={Link}
-              color="inherit"
-              href="https://xecua.hatenablog.com">
-              <ListItemIcon>
-                <Edit />
-              </ListItemIcon>
-              <ListItemText
-                sx={{ textDecoration: 'underline' }}
-                color="inherit"
-                primary="ぶろぐ"
-              />
-            </ListItem>
-          </List>
+        <Grid xs item container direction={{ xs: 'row', md: 'column' }}>
+          <Grid item xs={12} md={3}>
+            <AccountCard
+              href="https://github.com/xecua"
+              IconComponent={GitHub}
+              accountName="@xecua"
+            />
+          </Grid>
+          <Grid item xs={12} md={3}>
+            <AccountCard
+              href="https://twitter.com/xecual"
+              IconComponent={Twitter}
+              accountName="@xecual"
+            />
+          </Grid>
+          <Grid item xs={12} md={3}>
+            <AccountCard
+              IconComponent={Mail}
+              accountName="contact①caffeine②page"
+            />
+          </Grid>
+          <Grid item xs={12} md={3}>
+            <AccountCard
+              href="https://xecua.hatenablog.com"
+              IconComponent={Edit}
+              accountName="ぶろぐ"
+            />
+          </Grid>
+          <Grid item xs={12} md={3}>
+            <AccountCard
+              IconComponent={MastodonIcon}
+              accountName="@xecua@mstdn.jp"
+              linkProps={{ rel: 'me' }}
+              href="https://mstdn.jp/@xecua"
+            />
+          </Grid>
+          {/*
+          <Grid item xs={12} md={3}>
+            <AccountCard
+              IconComponent={AniListIcon}
+              accountName="@xecua"
+              href="https://anilist.co/user/xecua"
+            />
+          </Grid>
+          */}
         </Grid>
       </Grid>
       <Grid item xs={12}>
         <Typography gutterBottom>
           メアドは①を<code>@</code>に、②を<code>.</code>にしてください。
           <br />
-          PGP対応しています。公開鍵は<Link href="/key.asc">/key.asc</Link>とか
+          PGPで暗号化したかったら公開鍵を<Link href="/key.asc">/key.asc</Link>
+          とか
           <Link href="https://keys.openpgp.org">keys.openpgp.org</Link>
-          に置いてます
+          に置いてるので使ってください。
+          <br />
+          自分から送る時は Proton Mail
+          使ってるせいでバイナリ状態で届くと思います。
         </Typography>
         <Typography gutterBottom>
-          HNはxecua。読みは適当に(推奨はローマ字打ち「ぇくあ」、1文字目が読めないので「えくあ」で)。
+          HNはxecua。読みは適当に(推奨はローマ字打ちを無理矢理読んで「えくあ」)。
+          あと機械翻訳由来の「かふぇ」とかも使います
           <br />
           大学院でソフトウェア工学的なやつをやっています。 <br />
           これといった目的もなく生きているのでそのときにやりたいことをやっています
@@ -114,103 +105,81 @@ const Index: React.FC = () => {
           </Grid>
           <Grid item>
             <Typography variant="body1" paragraph sx={{ marginInlineStart: 2 }}>
-              PCいじり
+              プ
             </Typography>
             <Typography variant="body2" paragraph sx={{ marginInlineStart: 4 }}>
-              主にTwitterのような気もする たまにプをします
+              たまに。Python, Rust, TypeScript(React)あたりを使います
             </Typography>
-            <Typography variant="body2" sx={{ marginInlineStart: 4 }}>
-              Skills
-            </Typography>
-            <List dense sx={{ marginInlineStart: 4 }}>
-              <ListItem>
-                <ListItemText
-                  primary={
-                    <>
-                      <b>Python</b>
-                      <Icon fontSize="inherit" className="fab fa-python" />
-                    </>
-                  }
-                  secondary="MLではなく汎用計算機として。あとはDjangoとか"
-                />
-              </ListItem>
-              <ListItem>
-                <ListItemText
-                  primary={
-                    <>
-                      <b>Rust</b>
-                      <Icon fontSize="inherit" className="fab fa-rust" />
-                    </>
-                  }
-                  secondary="習熟度はそんなに高くないけどすき"
-                />
-              </ListItem>
-              <ListItem>
-                <ListItemText
-                  primary={
-                    <>
-                      <b>JavaScript/TypeScript</b>
-                      <Icon fontSize="inherit" className="fab fa-js" />
-                    </>
-                  }
-                  secondary="脳死Reactマン"
-                />
-              </ListItem>
-              <ListItem>
-                <ListItemText
-                  primary={
-                    <>
-                      <b>Unix shell</b>
-                      <Icon fontSize="inherit" className="fas fa-terminal" />
-                    </>
-                  }
-                  secondary="(黒い画面恐怖症ではないという程度の意味です)"
-                />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="きょっぷろも少々(あっとこ緑)" />
-              </ListItem>
-            </List>
           </Grid>
         </Grid>
       </Grid>
       <Grid item xs={12}>
         <Typography component="h2" variant="subtitle1">
-          所持資格: 基本情報処理技術者試験 / 第1級アマチュア無線技師 /
-          普通自動車運転免許
+          所持資格
         </Typography>
+        <Grid container direction="column">
+          <Grid item>
+            <Typography variant="body1" paragraph sx={{ marginInlineStart: 2 }}>
+              基本情報処理技術者試験
+            </Typography>
+          </Grid>
+          <Grid item>
+            <Typography variant="body1" paragraph sx={{ marginInlineStart: 2 }}>
+              第1級アマチュア無線技師
+            </Typography>
+          </Grid>
+          <Grid item>
+            <Typography variant="body1" paragraph sx={{ marginInlineStart: 2 }}>
+              普通自動車運転免許
+            </Typography>
+            <Typography variant="body2" paragraph sx={{ marginInlineStart: 4 }}>
+              MT車の運転するの好きです(免許取ってからは1回しかしてないけど)
+            </Typography>
+          </Grid>
+        </Grid>
       </Grid>
       <Grid item xs={12}>
         <Typography component="h2" variant="subtitle1">
-          その他リンク
+          雑多なぷろふぃーる
         </Typography>
-        <Typography paragraph sx={{ marginInlineStart: 1 }}>
-          <Link rel="me" href="https://mstdn.jp/@xecua">
-            mstdn.jp(多分メイン)
-          </Link>{' '}
-          /{' '}
-          <Link rel="me" href="https://pawoo.net/@xecua">
-            Pawoo(多分動かない)
-          </Link>{' '}
-          /{' '}
-          <Link rel="me" href="https://social.vivaldi.net/@xecua">
-            Vivaldi Social(多分動かない)
-          </Link>
-          <br />
-          Twitterが死んだ時のための冗長性です
+        <Grid container direction="column">
+          <Typography variant="body1" paragraph sx={{ marginInlineStart: 2 }}>
+            すきなたべもの: カレー
+          </Typography>
+          <Typography variant="body1" paragraph sx={{ marginInlineStart: 2 }}>
+            すきなおかし:
+            チョコレート(いちご・バナナ以外の食べ物と一緒になっている場合を除く)
+          </Typography>
+          <Typography variant="body1" paragraph sx={{ marginInlineStart: 2 }}>
+            すきな音楽ジャンル: ハピコア
+          </Typography>
+        </Grid>
+      </Grid>
+      <Grid item xs={12}>
+        <Typography component="h2" variant="subtitle1">
+          リンクの類
         </Typography>
-        <Typography paragraph sx={{ marginInlineStart: 1 }}>
-          <Link href="https://trap.jp/author/xecua">traP Blog</Link> <br />
-          所属しているサークルの枠で書いたやつ
-          黒歴史的なやつもあるけど人生自体黒歴史なので気にしないことにします
-        </Typography>
-        <Typography paragraph sx={{ marginInlineStart: 1 }}>
-          <Link href="https://www.amazon.jp/hz/wishlist/ls/1IO2VY7TGVLJM?ref_=wl_share">
-            芋🥔
-          </Link>
-          <br />
-          これ届くことあるんかな
-        </Typography>
+        <Grid container direction="column">
+          <Grid item>
+            <Typography variant="body1" paragraph sx={{ marginInlineStart: 2 }}>
+              <a href="https://trap.jp/author/xecua">traP Blog</a>
+            </Typography>
+            <Typography variant="body2" paragraph sx={{ marginInlineStart: 4 }}>
+              所属しているサークルの枠で書いたやつ
+              黒歴史的なやつもあるけど人生自体黒歴史なので気にしないことにします
+            </Typography>
+          </Grid>
+          <Grid item>
+            <Typography variant="body1" paragraph sx={{ marginInlineStart: 2 }}>
+              <a href="https://www.amazon.jp/hz/wishlist/ls/1IO2VY7TGVLJM?ref_=wl_share">
+                芋🥔
+              </a>
+            </Typography>
+            <Typography variant="body2" paragraph sx={{ marginInlineStart: 4 }}>
+              これ届くことあるんかな
+            </Typography>
+          </Grid>
+        </Grid>
       </Grid>
     </Grid>
   );

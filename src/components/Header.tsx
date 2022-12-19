@@ -7,14 +7,12 @@ import {
   IconButton,
   Hidden,
   List,
-  ListItem,
   SvgIconTypeMap,
   ListItemIcon,
-  // SvgIcon,
-  // SvgIconProps,
   ListItemText,
   SwipeableDrawer,
   useMediaQuery,
+  ListItemButton,
 } from '@mui/material';
 import {
   Menu as MenuIcon,
@@ -78,7 +76,7 @@ const Header: React.FC = () => {
             onClick={toggleDrawer}
             sx={{
               display: {
-                md: 'none',
+                sm: 'none',
               },
             }}
             size="large">
@@ -158,15 +156,14 @@ const Header: React.FC = () => {
           <List>
             {menuItems.map((item, i) => (
               <NextLink href={item.link} key={i}>
-                <ListItem
-                  button
+                <ListItemButton
                   onClick={toggleDrawer}
                   selected={router.pathname === item.link}>
                   <ListItemIcon>
                     <item.icon />
                   </ListItemIcon>
                   <ListItemText primary={item.label} />
-                </ListItem>
+                </ListItemButton>
               </NextLink>
             ))}
           </List>
