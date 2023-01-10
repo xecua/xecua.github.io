@@ -148,7 +148,7 @@ const Index: React.FC = () => {
           </Typography>
           <Typography variant="body1" paragraph sx={{ marginInlineStart: 2 }}>
             すきなおかし:
-            チョコレート(いちご・バナナ以外の食べ物と一緒になっている場合を除く)
+            チョコレート(いちご・バナナ以外のくだものと一緒になっている場合を除く)
           </Typography>
           <Typography variant="body1" paragraph sx={{ marginInlineStart: 2 }}>
             すきな音楽ジャンル: ハピコア
