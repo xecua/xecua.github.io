@@ -2,7 +2,9 @@ import AccountCard, { AccountCardProps } from '@/components/AccountCard';
 // import AniListIcon from '@/components/icons/AniListIcon';
 import MastodonIcon from '@/components/icons/MastodonIcon';
 import { Edit, GitHub, Mail, Twitter } from '@mui/icons-material';
-import { Avatar, Grid, Link, Typography } from '@mui/material';
+import { Avatar, Link, Typography } from '@mui/material';
+import Grid from '@mui/material/Grid';
+// import Grid from '@mui/material/Unstable_Grid2';
 import React from 'react';
 
 const accounts: AccountCardProps[] = [
@@ -49,21 +51,21 @@ const Index: React.FC = () => {
       justifyContent="space-evenly"
       alignItems="flex-start">
       <Grid item container xs={12} spacing={4}>
-        <Grid item xs={8} sm={4} md={2}>
+        <Grid item xs={4} md={2}>
           <Avatar
             src="/icon.png"
             alt="icon"
             sx={{ width: '100%', height: 'auto' }}
           />
         </Grid>
-        <Grid xs item container direction={{ xs: 'row', md: 'column' }}>
+        <Grid
+          item
+          xs
+          container
+          alignContent="start"
+          direction={{ xs: 'row', md: 'column' }}>
           {accounts.map((account) => (
-            <Grid
-              item
-              xs={12}
-              md={3}
-              width="10em"
-              key={account.href ?? account.accountName}>
+            <Grid item xs={12} md={3} key={account.href ?? account.accountName}>
               <AccountCard {...account} />
             </Grid>
           ))}
