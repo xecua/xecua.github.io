@@ -1,9 +1,42 @@
-import AccountCard from '@/components/AccountCard';
+import AccountCard, { AccountCardProps } from '@/components/AccountCard';
 // import AniListIcon from '@/components/icons/AniListIcon';
 import MastodonIcon from '@/components/icons/MastodonIcon';
 import { Edit, GitHub, Mail, Twitter } from '@mui/icons-material';
 import { Avatar, Grid, Link, Typography } from '@mui/material';
 import React from 'react';
+
+const accounts: AccountCardProps[] = [
+  {
+    href: 'https://github.com/xecua',
+    IconComponent: GitHub,
+    accountName: '@xecua',
+  },
+  {
+    href: 'https://twitter.com/xecual',
+    IconComponent: Twitter,
+    accountName: '@xecual',
+  },
+  {
+    IconComponent: Mail,
+    accountName: 'contact①caffeine②page',
+  },
+  {
+    href: 'https://xecua.hatenablog.com',
+    IconComponent: Edit,
+    accountName: 'ぶろぐ',
+  },
+  {
+    IconComponent: MastodonIcon,
+    accountName: '@xecua@mstdn.jp',
+    linkProps: { rel: 'me' },
+    href: 'https://mstdn.jp/@xecua',
+  },
+  // {
+  //   IconComponent: AniListIcon,
+  //   accountName: '@xecua',
+  //   href: 'https://anilist.co/user/xecua',
+  // },
+];
 
 const Index: React.FC = () => {
   return (
@@ -24,50 +57,16 @@ const Index: React.FC = () => {
           />
         </Grid>
         <Grid xs item container direction={{ xs: 'row', md: 'column' }}>
-          <Grid item xs={12} md={3}>
-            <AccountCard
-              href="https://github.com/xecua"
-              IconComponent={GitHub}
-              accountName="@xecua"
-            />
-          </Grid>
-          <Grid item xs={12} md={3}>
-            <AccountCard
-              href="https://twitter.com/xecual"
-              IconComponent={Twitter}
-              accountName="@xecual"
-            />
-          </Grid>
-          <Grid item xs={12} md={3}>
-            <AccountCard
-              IconComponent={Mail}
-              accountName="contact①caffeine②page"
-            />
-          </Grid>
-          <Grid item xs={12} md={3}>
-            <AccountCard
-              href="https://xecua.hatenablog.com"
-              IconComponent={Edit}
-              accountName="ぶろぐ"
-            />
-          </Grid>
-          <Grid item xs={12} md={3}>
-            <AccountCard
-              IconComponent={MastodonIcon}
-              accountName="@xecua@mstdn.jp"
-              linkProps={{ rel: 'me' }}
-              href="https://mstdn.jp/@xecua"
-            />
-          </Grid>
-          {/*
-          <Grid item xs={12} md={3}>
-            <AccountCard
-              IconComponent={AniListIcon}
-              accountName="@xecua"
-              href="https://anilist.co/user/xecua"
-            />
-          </Grid>
-          */}
+          {accounts.map((account) => (
+            <Grid
+              item
+              xs={12}
+              md={3}
+              width="10em"
+              key={account.href ?? account.accountName}>
+              <AccountCard {...account} />
+            </Grid>
+          ))}
         </Grid>
       </Grid>
       <Grid item xs={12}>
@@ -144,15 +143,17 @@ const Index: React.FC = () => {
         </Typography>
         <Grid container direction="column">
           <Typography variant="body1" paragraph sx={{ marginInlineStart: 2 }}>
-            すきなたべもの: カレー
+            すきなたべもの🍛: カレー
           </Typography>
           <Typography variant="body1" paragraph sx={{ marginInlineStart: 2 }}>
-            すきなおかし:
-            チョコレート(いちご・バナナ以外のくだものと一緒になっている場合を除く)
+            すきなおかし🍫: チョコレート
+            (いちご・バナナ以外のくだものと一緒になっている場合を除く)
           </Typography>
+          {/*
           <Typography variant="body1" paragraph sx={{ marginInlineStart: 2 }}>
-            すきな音楽ジャンル: ハピコア
+            すきな音楽ジャンル🕺: ハピコア
           </Typography>
+          */}
         </Grid>
       </Grid>
       <Grid item xs={12}>
@@ -160,6 +161,15 @@ const Index: React.FC = () => {
           リンクの類
         </Typography>
         <Grid container direction="column">
+          <Grid item>
+            <Typography variant="body1" paragraph sx={{ marginInlineStart: 2 }}>
+              <a href="https://diary.caffeine.page">にっき</a>
+            </Typography>
+            <Typography variant="body2" paragraph sx={{ marginInlineStart: 4 }}>
+              ほぼ中身がない日記です
+              Rust製の自作ジェネレータでMarkdownから生成しています
+            </Typography>
+          </Grid>
           <Grid item>
             <Typography variant="body1" paragraph sx={{ marginInlineStart: 2 }}>
               <a href="https://trap.jp/author/xecua">traP Blog</a>

@@ -3,7 +3,7 @@ import { Stack } from '@mui/system';
 import { Typography } from '@mui/material';
 import type { SvgIconComponent } from '@mui/icons-material';
 
-type AccountCardProps = {
+export type AccountCardProps = {
   href?: string;
   linkProps?: JSX.IntrinsicElements['a'];
   IconComponent: SvgIconComponent;
