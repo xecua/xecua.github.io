@@ -4,7 +4,7 @@
   "description": "GitHub Pages",
   "repository": "git@github.com:xecua/xecua.github.io.git",
   "author": "xecua <courser4848@gmail.com>",
-  "packageManager": "pnpm@7.18.2",
+  "packageManager": "pnpm@7.26.1",
   "license": "MIT",
   "private": true,
   "scripts": {
@@ -14,29 +14,31 @@
     "export": "next export"
   },
   "dependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
     "@emotion/cache": "^11.10.5",
     "@emotion/react": "^11.10.5",
     "@emotion/server": "^11.10.0",
     "@emotion/styled": "^11.10.5",
     "@mui/icons-material": "^5.11.0",
-    "@mui/material": "^5.11.0",
-    "@mui/styles": "^5.11.0",
-    "@mui/system": "^5.11.0",
-    "@types/node": "^18.11.17",
-    "@types/react": "^18.0.26",
+    "@mui/material": "^5.11.6",
+    "@mui/styles": "^5.11.2",
+    "@mui/system": "^5.11.5",
+    "@types/node": "^18.11.18",
+    "@types/react": "^18.0.27",
     "next": "^12.3.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "typescript": "^4.9.4"
   },
   "devDependencies": {
-    "@mui/codemod": "^5.11.0",
-    "@typescript-eslint/eslint-plugin": "^5.46.1",
-    "@typescript-eslint/parser": "^5.46.1",
-    "eslint": "^8.30.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-react": "^7.31.11",
+    "@mui/codemod": "^5.11.6",
+    "@typescript-eslint/eslint-plugin": "^5.49.0",
+    "@typescript-eslint/parser": "^5.49.0",
+    "eslint": "^8.32.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-react": "^7.32.1",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "prettier": "^2.8.1"
+    "prettier": "^2.8.3"
   }
 }
