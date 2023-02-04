@@ -1,5 +1,4 @@
 // custom app
-import React from 'react';
 import { AppProps } from 'next/app';
 import { CustomThemeProvider as ThemeProvider } from '@/components/ThemeProvider';
 import Header from '@/components/Header';

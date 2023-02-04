@@ -1,4 +1,3 @@
-import React from 'react';
 import { Stack } from '@mui/system';
 import { Typography } from '@mui/material';
 import type { SvgIconComponent } from '@mui/icons-material';

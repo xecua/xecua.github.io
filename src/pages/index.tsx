@@ -1,11 +1,11 @@
 import AccountCard, { AccountCardProps } from '@/components/AccountCard';
+import DiscordIcon from '@/components/icons/DiscordIcon';
 // import AniListIcon from '@/components/icons/AniListIcon';
 import MastodonIcon from '@/components/icons/MastodonIcon';
 import { Edit, GitHub, Mail, Twitter } from '@mui/icons-material';
 import { Avatar, Link, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid';
 // import Grid from '@mui/material/Unstable_Grid2';
-import React from 'react';
 
 const accounts: AccountCardProps[] = [
   {
@@ -32,6 +32,11 @@ const accounts: AccountCardProps[] = [
     accountName: '@xecua@mstdn.jp',
     linkProps: { rel: 'me' },
     href: 'https://mstdn.jp/@xecua',
+  },
+  {
+    href: 'https://discord.com/users/333637329006886932',
+    IconComponent: DiscordIcon,
+    accountName: 'xecua#8801',
   },
   // {
   //   IconComponent: AniListIcon,

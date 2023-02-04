@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box, Typography, Link, Stack } from '@mui/material';
 import * as utils from '@/utils';
 
