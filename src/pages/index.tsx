@@ -2,6 +2,7 @@ import AccountCard, { AccountCardProps } from '@/components/AccountCard';
 import DiscordIcon from '@/components/icons/DiscordIcon';
 // import AniListIcon from '@/components/icons/AniListIcon';
 import MastodonIcon from '@/components/icons/MastodonIcon';
+import NostrGuruIcon from '@/components/icons/NostrGuruIcon';
 import { Edit, GitHub, Mail, Twitter } from '@mui/icons-material';
 import { Avatar, Link, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid';
@@ -37,6 +38,11 @@ const accounts: AccountCardProps[] = [
     href: 'https://discord.com/users/333637329006886932',
     IconComponent: DiscordIcon,
     accountName: 'xecua#8801',
+  },
+  {
+    href: 'https://www.nostr.guru/p/d1b621478707667109f6933707e5c4bf09fa0bafdea45a93ec24a9c918f23018',
+    IconComponent: NostrGuruIcon,
+    accountName: 'nostr',
   },
   // {
   //   IconComponent: AniListIcon,
