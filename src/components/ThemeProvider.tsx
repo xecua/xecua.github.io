@@ -1,4 +1,4 @@
-import { PropsWithChildren } from 'react';
+import React, { PropsWithChildren } from 'react';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import {
   createTheme,

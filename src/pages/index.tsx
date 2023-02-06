@@ -40,10 +40,11 @@ const accounts: AccountCardProps[] = [
     accountName: 'xecua#8801',
   },
   {
-    href: 'https://www.nostr.guru/p/d1b621478707667109f6933707e5c4bf09fa0bafdea45a93ec24a9c918f23018',
-    IconComponent: NostrGuruIcon,
-    accountName: 'nostr',
+    href: 'https://nostr.directory/p/xecual',
+    IconComponent: NostrGuruIcon, // この使い方微妙かもしれん
+    accountName: 'nostr (directory)',
   },
+
   // {
   //   IconComponent: AniListIcon,
   //   accountName: '@xecua',
