@@ -1,5 +1,16 @@
 {
   "names": {
     "xecua": "d1b621478707667109f6933707e5c4bf09fa0bafdea45a93ec24a9c918f23018"
+  },
+  "relays": {
+    "d1b621478707667109f6933707e5c4bf09fa0bafdea45a93ec24a9c918f23018": [
+      "wss://relay-jp.nostr.wirednet.jp",
+      "wss://nostr.h3z.jp",
+      "wss://nostr.fediverse.jp",
+      "wss://nostr-pub.wellorder.net",
+      "wss://relay.damus.io",
+      "wss://relay.nostr.moe",
+      "wss://relay.stoner.com"
+    ]
   }
 }
