@@ -8,7 +8,8 @@
       "wss://nostr.h3z.jp",
       "wss://relay.snort.social",
       "wss://nostr-pub.wellorder.net",
-      "wss://relay.stoner.com"
+      "wss://relay.stoner.com",
+      "wss://relay.damus.io"
     ]
   }
 }
