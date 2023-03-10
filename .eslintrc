@@ -1,28 +1,28 @@
 {
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended",
-    "prettier"
-  ],
   "root": true,
   "env": {
     "node": true
   },
   "parser": "@typescript-eslint/parser",
-  "plugins": ["react", "react-hooks", "@typescript-eslint"],
+  "parserOptions": {
+    "extraFileExtensions": [".astro"]
+  },
+  "plugins": ["astro", "@typescript-eslint"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:astro/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
   "rules": {
-    "no-var": 2,
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
-    "react/jsx-uses-react": "off",
-    "react/react-in-jsx-scope": "off"
+    "no-var": 2
   },
   "overrides": [
     {
-      "files": ["**/*.tsx"],
-      "rules": {
-        "react/prop-types": "off"
+      "files": ["**/*.astro"],
+      "parser": "astro-eslint-parser",
+      "parserOptions": {
+        "parser": "@typescript-eslint/parser"
       }
     }
   ]
