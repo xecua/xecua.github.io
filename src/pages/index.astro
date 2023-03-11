@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+
+import Accounts from '@/layouts/Accounts.astro';
 ---
 
 <Layout title="Welcome to Astro.">
@@ -11,6 +13,7 @@ import Card from '../components/Card.astro';
       />
       <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
     </p>
+    <Accounts />
     <ul role="list" class="link-card-grid">
       <Card
         href="https://docs.astro.build/"
@@ -36,7 +39,7 @@ import Card from '../components/Card.astro';
   </main>
 </Layout>
 
-<style>
+<style lang="scss">
   main {
     margin: auto;
     padding: 1.5rem;
