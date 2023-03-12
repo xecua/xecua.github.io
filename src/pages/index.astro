@@ -1,85 +1,132 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Typography from '@components/Typography.astro';
+import { Image } from '@astrojs/image/components';
 
-import Accounts from '@/layouts/Accounts.astro';
+import Accounts from '@layouts/Accounts.astro';
+
+import icon from '@assets/icon.png';
+import DescItem from '@components/DescItem.astro';
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout>
   <main>
-    <h1>Welcome to <span class="text-gradient">Astro</span></h1>
-    <p class="instructions">
-      To get started, open the directory <code>src/pages</code> in your project.<br
-      />
-      <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-    </p>
-    <Accounts />
-    <ul role="list" class="link-card-grid">
-      <Card
-        href="https://docs.astro.build/"
-        title="Documentation"
-        body="Learn how Astro works and explore the official API docs."
-      />
-      <Card
-        href="https://astro.build/integrations/"
-        title="Integrations"
-        body="Supercharge your project with new frameworks and libraries."
-      />
-      <Card
-        href="https://astro.build/themes/"
-        title="Themes"
-        body="Explore a galaxy of community-built starter themes."
-      />
-      <Card
-        href="https://astro.build/chat/"
-        title="Community"
-        body="Come say hi to our amazing Discord community. ❤️"
-      />
-    </ul>
+    <section>
+      <h1>caffeine.page</h1>
+    </section>
+    <section>
+      <div class="icon-wrapper">
+        <Image src={icon} class="icon" />
+      </div>
+      <Accounts />
+      <Typography>人生エンジョイ勢のROM専ボイチェビクラスタ</Typography>
+    </section>
+    <hr />
+    <section>
+      <h2>Profile</h2>
+      <Typography>なまえ: xecua / かふぇ</Typography>
+      <Typography>めあど: contact [at] caffeine [dot] page</Typography>
+      <Typography indentLevel={1}>
+        (pubkey:
+        <a href="/key.asc">/key.asc</a> /
+        <a href="https://keys.openpgp.org/search?q=contact@caffeine.page"
+          >keys.openpgp.org</a
+        >
+        )
+      </Typography>
+      <Typography>しゅみ</Typography>
+      <ul>
+        <li>
+          <DescItem>
+            <span slot="title">ゲーム</span>
+            <span slot="desc">
+              専ら音楽ゲーム(SDVX(SV-1322-4960)/Arcaea(660416079) etc) <br />
+              あとははらがみ(807301671)とか
+            </span>
+          </DescItem>
+        </li>
+        <li>
+          <DescItem>
+            <span slot="title">プ</span>
+            <span slot="desc">たまに</span>
+          </DescItem>
+        </li>
+      </ul>
+      <Typography>しかく</Typography>
+      <ul>
+        <li>
+          <DescItem><span slot="title">基本情報処理技術者試験</span></DescItem>
+        </li>
+        <li>
+          <DescItem><span slot="title">第1級アマチュア無線技師</span></DescItem>
+        </li>
+        <li>
+          <DescItem>
+            <span slot="title">普通自動車運転免許</span>
+            <span slot="desc">
+              MT車の運転するの好きです(免許取ってからは1回しかしてない)
+            </span>
+          </DescItem>
+        </li>
+      </ul>
+      <hr />
+      <section>
+        <h2>Links</h2>
+        <Typography>文字</Typography>
+        <ul>
+          <li>
+            <DescItem>
+              <a href="https://xecua.hatenablog.com" slot="title">ぶろぐ</a>
+              <span slot="desc">備忘録的な</span>
+            </DescItem>
+          </li>
+          <li>
+            <DescItem>
+              <a href="https://diary.caffeine.page" slot="title">にっき</a>
+              <span slot="desc">
+                中身のない日記
+                Rust製の自作ジェネレータでMarkdownから生成しています
+              </span>
+            </DescItem>
+          </li>
+          <li>
+            <DescItem>
+              <a href="https://trap.jp/author/xecua" slot="title">traP Blog</a>
+              <span slot="desc">
+                所属していたサークルの枠で書いたやつ
+                黒歴史的なやつもあるけど人生自体黒歴史なので気にしないことにします
+              </span>
+            </DescItem>
+          </li>
+        </ul>
+      </section>
+    </section>
+
+    <style lang="scss">
+      main {
+        margin: auto;
+        padding: 1.5rem;
+        max-width: 60ch;
+      }
+      h1 {
+        font-size: 1.5rem;
+        /* font-weight: 800; */
+      }
+      h2 {
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+
+      .icon-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+      .icon {
+        width: 25%;
+        border-radius: 50%;
+        height: auto;
+      }
+    </style>
   </main>
 </Layout>
-
-<style lang="scss">
-  main {
-    margin: auto;
-    padding: 1.5rem;
-    max-width: 60ch;
-  }
-  h1 {
-    font-size: 3rem;
-    font-weight: 800;
-    margin: 0;
-  }
-  .text-gradient {
-    background-image: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 400%;
-    background-position: 0%;
-  }
-  .instructions {
-    line-height: 1.6;
-    margin: 1rem 0;
-    border: 1px solid rgba(var(--accent), 25%);
-    background-color: white;
-    padding: 1rem;
-    border-radius: 0.4rem;
-  }
-  .instructions code {
-    font-size: 0.875em;
-    font-weight: bold;
-    background: rgba(var(--accent), 12%);
-    color: rgb(var(--accent));
-    border-radius: 4px;
-    padding: 0.3em 0.45em;
-  }
-  .instructions strong {
-    color: rgb(var(--accent));
-  }
-  .link-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-    gap: 1rem;
-    padding: 0;
-  }
-</style>

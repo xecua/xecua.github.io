@@ -21,13 +21,11 @@ jobs:
         run: pnpm install --prod
       - name: Build
         run: pnpm build
-      - name: Export
-        run: |
-          pnpm export
-          touch out/.nojekyll
+      - name: Add nojekyll
+        run: touch dist/.nojekyll
       - uses: actions/upload-pages-artifact@v1
         with:
-          path: out
+          path: dist
   deploy:
     needs: build
     runs-on: ubuntu-latest

@@ -1,0 +1,19 @@
+---
+export interface Props {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  children: any;
+  indentLevel?: number;
+}
+
+const { indentLevel = 0 } = Astro.props;
+---
+
+<p>
+  <slot />
+</p>
+
+<style lang="scss" define:vars={{ indent: `${indentLevel}em` }}>
+  p {
+    margin-inline-start: var(--indent);
+  }
+</style>

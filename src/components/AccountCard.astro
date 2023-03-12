@@ -1,22 +1,22 @@
 ---
 import type { HTMLAttributes } from 'astro/types';
-import { Image } from '@astrojs/image/components';
+import { Icon } from 'astro-icon';
 
 export interface Props {
   href?: string;
-  iconSrc: string;
+  iconName: string;
   anchorProps?: Omit<HTMLAttributes<'a'>, 'href'>;
   accountName: string;
 }
 
-const { href, iconSrc, anchorProps, accountName } = Astro.props;
+const { href, iconName, anchorProps, accountName } = Astro.props;
 
 const Wrapper = href != null ? 'a' : Fragment;
 ---
 
 <Wrapper href={href} {...anchorProps}>
   <div class="card">
-    <Image src={iconSrc} />
+    <Icon name={iconName} />
     {/* <span>{accountName}</span> */}
   </div>
 </Wrapper>
@@ -26,17 +26,16 @@ const Wrapper = href != null ? 'a' : Fragment;
     display: flex;
     flex-direction: row;
     padding: 16px 8px;
-    /* padding: 16px 0px; */
     gap: 16px;
     justify-content: start;
   }
 
   a {
-    color: 'inherit';
-    cursor: 'pointer';
+    color: inherit;
+    cursor: pointer;
   }
 
-  img {
+  [astro-icon] {
     width: 1.5em;
     height: 1.5em;
   }
