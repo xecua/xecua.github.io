@@ -2,54 +2,55 @@
 import AccountCard from '@components/AccountCard.astro';
 
 const accounts = [
-  {
-    href: 'https://github.com/xecua',
-    iconName: 'mdi:github',
-    accountName: '@xecua',
-  },
-  {
-    href: 'https://twitter.com/xecual',
-    iconName: 'mdi:twitter',
-    accountName: '@xecual',
-  },
-  {
-    href: 'https://mstdn.jp/@xecua',
-    accountName: '@xecua@mstdn.jp',
-    anchorProps: { rel: 'me' },
-    iconName: 'mdi:mastodon',
-  },
-  {
-    href: 'https://discord.com/users/333637329006886932',
-    iconName: 'ic:baseline-discord',
-    accountName: 'xecua#8801',
-  },
-  {
-    href: 'https://nostx.shino3.net/npub16xmzz3u8qan8zz0kjvms0ewyhuyl5za0m6j94ylvyj5ujx8jxqvqlkdnkj',
-    iconName: 'nostr',
-    accountName: '_@caffeine.page',
-  },
-  // {
-  //   href: 'https://bsky.syui.cf/caffeine.page',
-  //   accountName: '@caffeine.page',
-  // },
-  // {
-  //   iconName: 'anilist',
-  //   accountName: '@xecua',
-  //   href: 'https://anilist.co/user/xecua',
-  // },
+    {
+        href: 'https://github.com/xecua',
+        iconName: 'mdi:github',
+        accountName: '@xecua',
+    },
+    {
+        href: 'https://twitter.com/xecual',
+        iconName: 'mdi:twitter',
+        accountName: '@xecual',
+    },
+    {
+        href: 'https://mstdn.jp/@xecua',
+        accountName: '@xecua@mstdn.jp',
+        anchorProps: { rel: 'me' },
+        iconName: 'mdi:mastodon',
+    },
+    {
+        href: 'https://discord.com/users/333637329006886932',
+        iconName: 'ic:baseline-discord',
+        accountName: 'xecua#8801',
+    },
+    {
+        href: 'https://nostx.shino3.net/npub16xmzz3u8qan8zz0kjvms0ewyhuyl5za0m6j94ylvyj5ujx8jxqvqlkdnkj',
+        iconName: 'nostr',
+        accountName: '_@caffeine.page',
+    },
+    {
+        href: 'https://bsky.app/caffeine.page',
+        iconName: 'noto:blue-square',
+        accountName: 'caffeine.page',
+    },
+    // {
+    //   iconName: 'anilist',
+    //   accountName: '@xecua',
+    //   href: 'https://anilist.co/user/xecua',
+    // },
 ];
 ---
 
 <div class="container">
-  {accounts.map((account) => <AccountCard {...account} />)}
+    {accounts.map((account) => <AccountCard {...account} />)}
 </div>
 
 <style lang="scss">
-  .container {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-start;
-  }
+    .container {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
 </style>
