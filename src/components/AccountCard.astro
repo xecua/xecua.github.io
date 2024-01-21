@@ -1,6 +1,6 @@
 ---
 import type { HTMLAttributes } from 'astro/types';
-import { Icon } from 'astro-icon';
+import { Icon } from 'astro-icon/components';
 
 export interface Props {
   href?: string;
@@ -35,7 +35,7 @@ const Wrapper = href != null ? 'a' : Fragment;
     cursor: pointer;
   }
 
-  [astro-icon] {
+  [data-icon] {
     width: 1.5em;
     height: 1.5em;
   }

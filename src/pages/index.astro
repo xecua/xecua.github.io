@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Typography from '@components/Typography.astro';
-import { Image } from '@astrojs/image/components';
+import { Image } from 'astro:assets';
 
 import Accounts from '@layouts/Accounts.astro';
 
@@ -16,7 +16,7 @@ import DescItem from '@components/DescItem.astro';
     </section>
     <section>
       <div class="icon-wrapper">
-        <Image src={icon} class="icon" />
+        <Image src={icon} class="icon" alt="my icon" />
       </div>
       <Accounts />
       <Typography>人生エンジョイ勢のROM専ボイチェビクラスタ</Typography>
@@ -64,7 +64,7 @@ import DescItem from '@components/DescItem.astro';
           <DescItem>
             <span slot="title">普通自動車運転免許</span>
             <span slot="desc">
-              MT車の運転するの好きです(免許取ってからは1回しかしてない)
+              MT車の運転するの好きです(公道では2回しかしてないけど)
             </span>
           </DescItem>
         </li>
