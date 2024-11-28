@@ -16,22 +16,22 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "@iconify-json/ic": "^1.1.17",
-    "@iconify-json/mdi": "^1.1.64",
-    "@iconify-json/noto": "^1.1.18",
-    "astro": "^4.4.15",
-    "astro-icon": "^1.1.0",
-    "sass": "^1.71.1",
-    "sharp": "^0.33.2",
-    "typescript": "^5.4.2"
+    "@iconify-json/ic": "^1.2.1",
+    "@iconify-json/mdi": "^1.2.1",
+    "@iconify-json/noto": "^1.2.1",
+    "astro": "^4.16.16",
+    "astro-icon": "^1.1.4",
+    "sass": "^1.81.0",
+    "sharp": "^0.33.5",
+    "typescript": "^5.7.2"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
-    "eslint": "^8.57.0",
+    "eslint": "^8.57.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-astro": "^0.31.4",
-    "prettier": "^3.2.5",
+    "prettier": "^3.4.1",
     "prettier-plugin-astro": "^0.13.0"
   }
 }
