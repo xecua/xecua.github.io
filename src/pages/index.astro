@@ -1,5 +1,5 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '@layouts/Layout.astro';
 import Typography from '@components/Typography.astro';
 import { Image } from 'astro:assets';
 
@@ -19,7 +19,8 @@ import DescItem from '@components/DescItem.astro';
         <Image src={icon} class="icon" alt="my icon" />
       </div>
       <Accounts />
-      <Typography>人生エンジョイ勢。合成音声キャラクターが好きです。</Typography>
+      <Typography>人生エンジョイ勢。合成音声キャラクターが好きです。</Typography
+      >
     </section>
     <hr />
     <section>
@@ -29,7 +30,9 @@ import DescItem from '@components/DescItem.astro';
       <Typography indentLevel={1}>
         (pubkey:
         <a href="/key.asc">/key.asc</a> /
-        <a href="https://keys.openpgp.org/search?q=contact@caffeine.page">keys.openpgp.org</a>
+        <a href="https://keys.openpgp.org/search?q=contact@caffeine.page"
+          >keys.openpgp.org</a
+        >
         )
       </Typography>
       <Typography>しゅみ</Typography>
@@ -52,9 +55,17 @@ import DescItem from '@components/DescItem.astro';
       </ul>
       <Typography>しかく</Typography>
       <ul>
-        <li> <DescItem><span slot="title">基本情報処理技術者試験</span></DescItem></li>
-        <li><DescItem><span slot="title">ネットワークスペシャリスト試験</span></DescItem></li>
-        <li><DescItem><span slot="title">第1級アマチュア無線技師</span></DescItem></li>
+        <li>
+          <DescItem><span slot="title">基本情報処理技術者試験</span></DescItem>
+        </li>
+        <li>
+          <DescItem
+            ><span slot="title">ネットワークスペシャリスト試験</span></DescItem
+          >
+        </li>
+        <li>
+          <DescItem><span slot="title">第1級アマチュア無線技師</span></DescItem>
+        </li>
         <li>
           <DescItem>
             <span slot="title">普通自動車運転免許</span>
@@ -98,20 +109,6 @@ import DescItem from '@components/DescItem.astro';
     </section>
 
     <style lang="scss">
-      main {
-        margin: auto;
-        padding: 1.5rem;
-        max-width: 60ch;
-      }
-      h1 {
-        font-size: 1.5rem;
-        /* font-weight: 800; */
-      }
-      h2 {
-        font-size: 1.2rem;
-        font-weight: 600;
-      }
-
       .icon-wrapper {
         display: flex;
         flex-direction: row;

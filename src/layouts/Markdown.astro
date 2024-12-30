@@ -1,0 +1,14 @@
+---
+import Layout from '@/layouts/Layout.astro';
+
+const { frontmatter } = Astro.props;
+const site = 'caffeine.page';
+const title =
+  frontmatter.title != null ? `${frontmatter.title} | ${site}` : site;
+---
+
+<Layout title={title}>
+  <main>
+    <slot />
+  </main>
+</Layout>
