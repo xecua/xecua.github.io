@@ -12,3 +12,26 @@ const title =
     <slot />
   </main>
 </Layout>
+
+<style lang="scss" is:global>
+  .rlc-container {
+    display: block;
+    border: solid 1px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    text-decoration: none;
+  }
+  .rlc-title {
+    font-weight: bold;
+  }
+  .rlc-description {
+    font-size: 0.8em;
+    margin: 5px auto;
+  }
+  .rlc-url-container {
+    display: flex;
+    gap: 5px;
+    line-height: 100%;
+    font-size: 0.75em;
+  }
+</style>

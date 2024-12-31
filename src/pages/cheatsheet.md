@@ -11,12 +11,16 @@ layout: ../layouts/Markdown.astro
 
 ## コマンド
 
-pipx https://pipx.pypa.io/stable/
+### pipx
+
+https://pipx.pypa.io/stable/
 
 PyPIに公開されているコマンドラインアプリケーションを(独立した環境に)インストールすることができるアプリ。
 
 ## ログ
 
-lnav https://lnav.org
+### lnav
+
+https://lnav.org
 
 なんかログがみやすくなるらしい。まだ使ったことはない。
