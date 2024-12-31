@@ -12,7 +12,7 @@ const { indentLevel = 0 } = Astro.props;
   <slot />
 </p>
 
-<style lang="scss" define:vars={{ indent: `${indentLevel}em` }}>
+<style define:vars={{ indent: `${indentLevel}em` }}>
   p {
     margin-inline-start: var(--indent);
   }
