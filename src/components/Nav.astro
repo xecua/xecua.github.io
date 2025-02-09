@@ -4,7 +4,10 @@ const { pathname } = Astro.url;
 
 <nav>
   <a href="/" class:list={{ current: pathname === '/' }}>Home</a>
-  <a href="/cheatsheet" class:list={{ current: pathname === '/cheatsheet/' }}>
+  <a
+    href="/cheatsheet"
+    class:list={{ current: /^\/cheatsheet/.test(pathname) }}
+  >
     Cheatsheet
   </a>
 </nav>
