@@ -18,7 +18,7 @@ https://ianyh.com/amethyst/
 macOSのタイル型ウィンドウマネージャ。
 yabaiと違ってSIPの無効化がいらないし、modが固定なので諦めがつく。option+shiftはちょっと押し辛い。
 
-## 仮想環境など
+## プログラミング言語環境
 
 ### pipx/uvx
 
@@ -36,6 +36,12 @@ https://volta.sh
 
 nodeのバージョン切り替えるやつ。最近ggるとこれがよく出る気がする
 
+### jbang
+
+https://www.jbang.dev
+
+Javaのスクリプト実行環境。jshellよりも軽い
+
 ## ツール
 
 ### iconv
@@ -44,14 +50,25 @@ nodeのバージョン切り替えるやつ。最近ggるとこれがよく出�
 https://github.com/mtgto/macSKK/issues/160 で「nkfは流石に古くて正しく動かなくても仕方ない」と言っていたのでこっちを使っていきたい。
 
 余談。
-+ macOSに標準搭載されているiconvはこれまた古い。`brew`などでの最新版のインストールを推奨(これも↑のissueで言ってた)。
-+ POSIX標準なだけで様々な実装が存在し得る。とはいえGNUのやつ(libiconv)がデファクトスタンダードっぽさ。
+
+- macOSに標準搭載されているiconvはこれまた古い。`brew`などでの最新版のインストールを推奨(これも↑のissueで言ってた)。
+- # POSIX標準なだけで様々な実装が存在し得る。とはいえGNUのやつ(libiconv)がデファクトスタンダードっぽさ。
+
+## ログ
 
 ### lnav
 
 https://lnav.org
 
 なんかログがみやすくなるらしい。まだ使ったことはない。
+
+## Web
+
+### usql
+
+https://github.com/xo/usql
+
+いろんなDBMSに繋げるSQLクライアント (Goなのでdbcliより実行時依存は少なさそう……)
 
 ## Vim
 
