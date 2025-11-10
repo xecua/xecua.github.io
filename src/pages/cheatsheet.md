@@ -54,6 +54,11 @@ https://github.com/mtgto/macSKK/issues/160 で「nkfは流石に古くて正し�
 - macOSに標準搭載されているiconvはこれまた古い。`brew`などでの最新版のインストールを推奨(これも↑のissueで言ってた)。
 - # POSIX標準なだけで様々な実装が存在し得る。とはいえGNUのやつ(libiconv)がデファクトスタンダードっぽさ。
 
+### difit
+
+ローカルの変更をGitHubっぽいUIで確認できるやつ。一応TUIもある
+https://github.com/yoshiko-pg/difit/tree/main
+
 ## ログ
 
 ### lnav
@@ -77,3 +82,10 @@ https://github.com/xo/usql
 https://github.com/google/vimdoc
 
 vimdocのテンプレを生成してくれるやつ
+
+## Gentoo
+
+### ebuildtester
+https://wiki.gentoo.org/wiki/Test_environment
+
+Dockerコンテナ内でebuildのテストをするためのツール
