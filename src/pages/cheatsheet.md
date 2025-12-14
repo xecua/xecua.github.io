@@ -13,7 +13,7 @@ layout: ../layouts/Markdown.astro
 
 ### Amethyst
 
-https://ianyh.com/amethyst/
+<https://ianyh.com/amethyst/>
 
 macOSのタイル型ウィンドウマネージャ。
 yabaiと違ってSIPの無効化がいらないし、modが固定なので諦めがつく。option+shiftはちょっと押し辛い。
@@ -22,23 +22,23 @@ yabaiと違ってSIPの無効化がいらないし、modが固定なので諦め
 
 ### pipx/uvx
 
-https://pipx.pypa.io/stable/
+<https://pipx.pypa.io/stable/>
 
 PyPIに公開されているコマンドラインアプリケーションを(独立した環境に)インストールすることができるアプリ。
 
 uvxでもいいかも
 毎回uvxしたくないなら`uv tool install`でいける
-https://docs.astral.sh/uv/guides/tools
+<https://docs.astral.sh/uv/guides/tools>
 
 ### volta
 
-https://volta.sh
+<https://volta.sh>
 
 nodeのバージョン切り替えるやつ。最近ggるとこれがよく出る気がする
 
 ### jbang
 
-https://www.jbang.dev
+<https://www.jbang.dev>
 
 Javaのスクリプト実行環境。jshellよりも軽い
 
@@ -47,7 +47,7 @@ Javaのスクリプト実行環境。jshellよりも軽い
 ### iconv
 
 エンコード変換するやつ。
-https://github.com/mtgto/macSKK/issues/160 で「nkfは流石に古くて正しく動かなくても仕方ない」と言っていたのでこっちを使っていきたい。
+<https://github.com/mtgto/macSKK/issues/160> で「nkfは流石に古くて正しく動かなくても仕方ない」と言っていたのでこっちを使っていきたい。
 
 余談。
 
@@ -57,13 +57,13 @@ https://github.com/mtgto/macSKK/issues/160 で「nkfは流石に古くて正し�
 ### difit
 
 ローカルの変更をGitHubっぽいUIで確認できるやつ。一応TUIもある
-https://github.com/yoshiko-pg/difit/tree/main
+<https://github.com/yoshiko-pg/difit/tree/main>
 
 ## ログ
 
 ### lnav
 
-https://lnav.org
+<https://lnav.org>
 
 なんかログがみやすくなるらしい。まだ使ったことはない。
 
@@ -71,7 +71,7 @@ https://lnav.org
 
 ### usql
 
-https://github.com/xo/usql
+<https://github.com/xo/usql>
 
 いろんなDBMSに繋げるSQLクライアント (Goなのでdbcliより実行時依存は少なさそう……)
 
@@ -79,13 +79,23 @@ https://github.com/xo/usql
 
 ### google/vimdoc
 
-https://github.com/google/vimdoc
+<https://github.com/google/vimdoc>
 
 vimdocのテンプレを生成してくれるやつ
 
 ## Gentoo
 
 ### ebuildtester
-https://wiki.gentoo.org/wiki/Test_environment
+
+<https://wiki.gentoo.org/wiki/Test_environment>
 
 Dockerコンテナ内でebuildのテストをするためのツール
+
+## macOS
+
+macOSで表に出てこないけどやっておくべき設定
+
+- 数値を表示するとき、3桁ごとの区切りをなくし、小数点の区切りをピリオドにする
+  `defaults write NSGlobalDomain AppleICUNumberSymbols -dict 0 "." 1 "" 10 "." 17 ""`
+- .から始まるファイルを常に表示する
+  `defaults write com.apple.finder AppleShowAllFiles -bool true`
