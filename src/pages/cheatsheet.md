@@ -52,7 +52,7 @@ Javaのスクリプト実行環境。jshellよりも軽い
 余談。
 
 - macOSに標準搭載されているiconvはこれまた古い。`brew`などでの最新版のインストールを推奨(これも↑のissueで言ってた)。
-- # POSIX標準なだけで様々な実装が存在し得る。とはいえGNUのやつ(libiconv)がデファクトスタンダードっぽさ。
+- POSIX標準なだけで様々な実装が存在し得る。とはいえGNUのやつ(libiconv)がデファクトスタンダードっぽさ。
 
 ### difit
 
@@ -96,6 +96,9 @@ Dockerコンテナ内でebuildのテストをするためのツール
 macOSで表に出てこないけどやっておくべき設定
 
 - 数値を表示するとき、3桁ごとの区切りをなくし、小数点の区切りをピリオドにする
+
   `defaults write NSGlobalDomain AppleICUNumberSymbols -dict 0 "." 1 "" 10 "." 17 ""`
+
 - .から始まるファイルを常に表示する
+
   `defaults write com.apple.finder AppleShowAllFiles -bool true`
