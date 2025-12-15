@@ -20,13 +20,9 @@ yabaiと違ってSIPの無効化がいらないし、modが固定なので諦め
 
 ## プログラミング言語環境
 
-### pipx/uvx
+### uvx
 
-<https://pipx.pypa.io/stable/>
-
-PyPIに公開されているコマンドラインアプリケーションを(独立した環境に)インストールすることができるアプリ。
-
-uvxでもいいかも
+uv付属のnpx的なやつ mcpでよくお世話になっている
 毎回uvxしたくないなら`uv tool install`でいける
 <https://docs.astral.sh/uv/guides/tools>
 
@@ -35,6 +31,7 @@ uvxでもいいかも
 <https://volta.sh>
 
 nodeのバージョン切り替えるやつ。最近ggるとこれがよく出る気がする
+そうでもないかも
 
 ### jbang
 
@@ -57,7 +54,24 @@ Javaのスクリプト実行環境。jshellよりも軽い
 ### difit
 
 ローカルの変更をGitHubっぽいUIで確認できるやつ。一応TUIもある
-<https://github.com/yoshiko-pg/difit/tree/main>
+<https://github.com/yoshiko-pg/difit/>
+
+### termshot
+
+ターミナルのイカしたスクショが撮れるやつ
+<https://github.com/homeport/termshot>
+
+### dua
+
+ディスクの使用量がわかって消せるやつ
+<https://github.com/Byron/dua-cli>
+
+### cleaner
+
+ディスクの使用量がわかって消せるやつ その2
+<https://github.com/vyrti/cleaner>
+
+どっちがいいのかわからん
 
 ## ログ
 
