@@ -26,12 +26,21 @@ uv付属のnpx的なやつ mcpでよくお世話になっている
 毎回uvxしたくないなら`uv tool install`でいける
 <https://docs.astral.sh/uv/guides/tools>
 
-### volta
+### mise
 
-<https://volta.sh>
+<https://mise.jdx.dev>
 
-nodeのバージョン切り替えるやつ。最近ggるとこれがよく出る気がする
-そうでもないかも
+いろんなツールのバージョンとかをプロジェクトで固定したりなんやかんやしたりできるやつ
+てんこ盛りなのがちょっと懸念(最小限の方が嬉しい……)
+
+対抗としてNixが挙げられがちだけど、Nixはnix書けないといけないし、daemonが走ってないといけないし、でなんかキツくない?の気持ち
+
+### ni
+
+<https://github.com/antfu-collective/ni>
+
+npmとかyarnとか気にしなくてよくなる人
+fishのabbrで代替実装しようとしたけど、global installとか考慮しようとすると無理っぽかったので素直に使うことにした
 
 ### jbang
 
