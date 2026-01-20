@@ -9,46 +9,7 @@ layout: ../layouts/Markdown.astro
 
 あとでよく使ってるやつも書くかも
 
-## GUI
-
-### Amethyst
-
-<https://ianyh.com/amethyst/>
-
-macOSのタイル型ウィンドウマネージャ。
-yabaiと違ってSIPの無効化がいらないし、modが固定なので諦めがつく。option+shiftはちょっと押し辛い。
-
-## プログラミング言語環境
-
-### uvx
-
-uv付属のnpx的なやつ mcpでよくお世話になっている
-毎回uvxしたくないなら`uv tool install`でいける
-<https://docs.astral.sh/uv/guides/tools>
-
-### mise
-
-<https://mise.jdx.dev>
-
-いろんなツールのバージョンとかをプロジェクトで固定したりなんやかんやしたりできるやつ
-てんこ盛りなのがちょっと懸念(最小限の方が嬉しい……)
-
-対抗としてNixが挙げられがちだけど、Nixはnix書けないといけないし、daemonが走ってないといけないし、でなんかキツくない?の気持ち
-
-### ni
-
-<https://github.com/antfu-collective/ni>
-
-npmとかyarnとか気にしなくてよくなる人
-fishのabbrで代替実装しようとしたけど、global installとか考慮しようとすると無理っぽかったので素直に使うことにした
-
-### jbang
-
-<https://www.jbang.dev>
-
-Javaのスクリプト実行環境。jshellよりも軽い
-
-## ツール
+## CLI
 
 ### iconv
 
@@ -75,30 +36,11 @@ Javaのスクリプト実行環境。jshellよりも軽い
 ディスクの使用量がわかって消せるやつ
 <https://github.com/Byron/dua-cli>
 
-### cleaner
-
-ディスクの使用量がわかって消せるやつ その2
-<https://github.com/vyrti/cleaner>
-
-どっちがいいのかわからん
-
-## ログ
-
-### lnav
-
-<https://lnav.org>
-
-なんかログがみやすくなるらしい。まだ使ったことはない。
-
-## Web
-
 ### usql
 
 <https://github.com/xo/usql>
 
 いろんなDBMSに繋げるSQLクライアント (Goなのでdbcliより実行時依存は少なさそう……)
-
-## Vim
 
 ### google/vimdoc
 
@@ -106,13 +48,69 @@ Javaのスクリプト実行環境。jshellよりも軽い
 
 vimdocのテンプレを生成してくれるやつ
 
-## Gentoo
-
 ### ebuildtester
 
 <https://wiki.gentoo.org/wiki/Test_environment>
 
 Dockerコンテナ内でebuildのテストをするためのツール
+
+### ni
+
+<https://github.com/antfu-collective/ni>
+
+npmとかyarnとか気にしなくてよくなる人
+fishのabbrで代替実装しようとしたけど、global installとか考慮しようとすると無理っぽかったので素直に使うことにした
+
+### uvx
+
+uv付属のnpx的なやつ mcpでよくお世話になっている
+毎回uvxしたくないなら`uv tool install`でいける
+<https://docs.astral.sh/uv/guides/tools>
+
+### jbang
+
+<https://www.jbang.dev>
+
+Javaのスクリプト実行環境。jshellよりも軽い
+
+### mise
+
+Nodeバージョンマネージャの文脈で知った。voltaよりも使われていそう(Nixが対抗馬として挙げられてる?)
+
+これ自体は開発ツールマネージャ+タスクランナーなどてんこもりな感じ。
+MakeがPOSIX標準でなければ片っ端から採用したいレベル。
+uvもjbangもこれで入るくらいな感じなので節度を持たないとめちゃくちゃになりそう
+<https://mise.jdx.dev>
+
+## TUI
+
+### timg
+
+<https://github.com/hzeller/timg>
+
+ターミナルで画像が表示できるやつ。
+この手のプロトコルはSixel、Kitty Graphics Protocol, iTerm2 Inline Image Protocolなんかがあるけど、この3つには対応しているみたい
+
+Ghosttyは(Sixelには対応する予定がないらしいけど)Kitty Graphics Protocolには対応している(Kitty以外だと唯一らしい?)ので、Kitty Graphics Protocolで出力させれば見ることができる。
+そのためには`-pk`フラグが必要。
+<https://github.com/ghostty-org/ghostty/discussions/2496#discussioncomment-11727842>
+
+### lnav
+
+<https://lnav.org>
+
+なんかログがみやすくなるらしい。まだ使ったことはない。
+
+## GUI
+
+### Glide
+
+<https://github.com/glide-wm/glide>
+
+Amethystから乗り換え。
+こちらもSIPの無効化は不要(最近のmacOSだとアクセシビリティのどうこうでいけるようになったんかな?)
+こちらはModの指定もできる。
+ちょっと機能的に足りないところもあるけど、Swayに近い機能があるし、アニメーションのおかげでスムーズに感じられるで満足。
 
 ## macOS
 
