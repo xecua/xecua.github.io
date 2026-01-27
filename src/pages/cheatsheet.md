@@ -58,13 +58,14 @@ Dockerコンテナ内でebuildのテストをするためのツール
 
 <https://github.com/antfu-collective/ni>
 
-npmとかyarnとか気にしなくてよくなる人
+npmとかyarnとか気にしなくてよくなる人  
 fishのabbrで代替実装しようとしたけど、global installとか考慮しようとすると無理っぽかったので素直に使うことにした
 
 ### uvx
 
-uv付属のnpx的なやつ mcpでよくお世話になっている
-毎回uvxしたくないなら`uv tool install`でいける
+uv付属のnpx的なやつ mcpでよくお世話になっている  
+毎回uvxしたくないなら`uv tool install`でいける  
+
 <https://docs.astral.sh/uv/guides/tools>
 
 ### jbang
@@ -75,11 +76,12 @@ Javaのスクリプト実行環境。jshellよりも軽い
 
 ### mise
 
-Nodeバージョンマネージャの文脈で知った。voltaよりも使われていそう(Nixが対抗馬として挙げられてる?)
+Nodeバージョンマネージャの文脈で知った。voltaよりも使われていそう(Nixが対抗馬として挙げられてる?)  
 
-これ自体は開発ツールマネージャ+タスクランナーなどてんこもりな感じ。
-MakeがPOSIX標準でなければ片っ端から採用したいレベル。
+これ自体は開発ツールマネージャ+タスクランナーなどてんこもりな感じ。  
+MakeがPOSIX標準でなければ片っ端から採用したいレベル。  
 uvもjbangもこれで入るくらいな感じなので節度を持たないとめちゃくちゃになりそう
+
 <https://mise.jdx.dev>
 
 ## TUI
@@ -88,11 +90,12 @@ uvもjbangもこれで入るくらいな感じなので節度を持たないと�
 
 <https://github.com/hzeller/timg>
 
-ターミナルで画像が表示できるやつ。
+ターミナルで画像が表示できるやつ。  
 この手のプロトコルはSixel、Kitty Graphics Protocol, iTerm2 Inline Image Protocolなんかがあるけど、この3つには対応しているみたい
 
-Ghosttyは(Sixelには対応する予定がないらしいけど)Kitty Graphics Protocolには対応している(Kitty以外だと唯一らしい?)ので、Kitty Graphics Protocolで出力させれば見ることができる。
-そのためには`-pk`フラグが必要。
+GhosttyはSixelには対応する予定がない一方でKitty Graphics Protocolには対応しているので、これで出力させれば見ることができる。  
+`-pk`フラグでそうなる。
+
 <https://github.com/ghostty-org/ghostty/discussions/2496#discussioncomment-11727842>
 
 ### lnav
@@ -107,9 +110,9 @@ Ghosttyは(Sixelには対応する予定がないらしいけど)Kitty Graphics 
 
 <https://github.com/glide-wm/glide>
 
-Amethystから乗り換え。
-こちらもSIPの無効化は不要(最近のmacOSだとアクセシビリティのどうこうでいけるようになったんかな?)
-こちらはModの指定もできる。
+Amethystから乗り換え。  
+こちらもSIPの無効化は不要(最近のmacOSだとアクセシビリティのどうこうでいけるようになったんかな?)  
+こちらはModの指定もできる。  
 ちょっと機能的に足りないところもあるけど、Swayに近い機能があるし、アニメーションのおかげでスムーズに感じられるで満足。
 
 ## macOS
