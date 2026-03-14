@@ -24,7 +24,7 @@
     "@iconify-json/ic": "^1.2.4",
     "@iconify-json/mdi": "^1.2.3",
     "@iconify-json/noto": "^1.2.7",
-    "astro": "^5.18.1",
+    "astro": "^6.0.4",
     "astro-icon": "^1.1.5",
     "rehype-external-links": "^3.0.0",
     "rehype-raw": "^7.0.0",
