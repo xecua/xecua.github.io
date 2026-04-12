@@ -22,5 +22,6 @@ export default defineConfig({
     ],
   },
 
-  adapter: cloudflare(),
+  // 静的サイトならcompile
+  adapter: cloudflare({ imageService: 'compile' }),
 });
