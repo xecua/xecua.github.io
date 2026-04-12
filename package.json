@@ -1,8 +1,8 @@
 {
-  "name": "xecua.github.io",
+  "name": "caffeine-page",
   "version": "2.0.0",
   "private": true,
-  "description": "GitHub Pages",
+  "description": "index",
   "devEngines": {
     "packageManager": {
       "name": "npm",
@@ -11,7 +11,7 @@
   },
   "license": "MIT",
   "author": "xecua<contact@caffeine.page>",
-  "repository": "git@github.com:xecua/xecua.github.io.git",
+  "repository": "git@github.com:xecua/caffeine.page.git",
   "type": "module",
   "scripts": {
     "check": "oxlint --type-aware --type-check",
@@ -43,3 +43,4 @@
   },
   "packageManager": "npm@11.11.1"
 }
+
