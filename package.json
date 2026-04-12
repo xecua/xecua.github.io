@@ -18,9 +18,12 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "npm run build && wrangler dev",
+    "generate-types": "wrangler types",
+    "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^13.1.8",
     "@iconify-json/ic": "^1.2.4",
     "@iconify-json/mdi": "^1.2.3",
     "@iconify-json/noto": "^1.2.7",
@@ -39,8 +42,8 @@
     "oxlint-tsgolint": "^0.16.0",
     "prettier": "^3.8.1",
     "prettier-plugin-astro": "^0.14.1",
-    "typescript-eslint": "^8.57.0"
+    "typescript-eslint": "^8.57.0",
+    "wrangler": "^4.81.1"
   },
   "packageManager": "npm@11.11.1"
 }
-
